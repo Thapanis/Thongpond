@@ -138,13 +138,15 @@
     		<div class="row">
 
 				<?php
+					$count = 1;
+
 					$sql = "SELECT * FROM product LIMIT 8";
 					if($result = mysqli_query($conn, $sql)){
 						if(mysqli_num_rows($result) > 0){
 							while($row = mysqli_fetch_array($result)){
 								echo "<div class='col-md-6 col-lg-3 ftco-animate'>";
 									echo "<div class='product'>";
-										echo "<a href='#' class='img-prod'><img class='img-fluid' src='images/product-1.jpg' alt='Colorlib Template'>";
+										echo "<a href='#' class='img-prod'><img class='img-fluid' src='images/product-".$count.".jpg' alt='Colorlib Template'>";
 											// echo "<span class='status'>30%</span>";
 											echo "<div class='overlay'></div>";
 										echo "</a>";
@@ -166,6 +168,8 @@
 										echo "</div>";
 									echo "</div>";
 								echo "</div>";
+
+								$count++;
 							}
 						}
 					}

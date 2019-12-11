@@ -1,5 +1,6 @@
 <?php
 	include 'connectdb.php';
+	session_start();
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +47,14 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-1 pr-1 d-flex topper align-items-center text-lg-right">
-						    <a class="text" href="/worldgrow/login/login.php">login</a>
+					    <div class="col-md-2 pr-1 d-flex topper align-items-center text-lg-right">
+							<?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>login</a>";
+								} else {
+									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>

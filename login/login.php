@@ -10,7 +10,7 @@
 		<h2>Login</h2>
 	</div>
 	
-	<form method="post" action="login.php">
+	<form method="post" action="login-action.php">
 
 		<div class="input-group">
 			<label>Username</label>
@@ -27,6 +27,6 @@
 			Not yet a member? <a href="register.php">Sign up</a>
 		</p>
 	</form>
-	
+
 </body>
 </html>

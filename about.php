@@ -43,7 +43,7 @@
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">Login</span>
+              <span class="text">39 Moo 1 Pongpha 57130, Thailand</span>
 					    </div>
 				    </div>
 			    </div>
@@ -52,25 +52,25 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">WorldGrow Organic Farm</a>
+	      <a class="navbar-brand" href="index.php">WorldGrow Organic Farm</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">Shop</a>
+                <a class="dropdown-item" href="cart.php">Cart</a>
+                <a class="dropdown-item" href="checkout.php">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item active"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -82,7 +82,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About us</span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>About us</span></p>
             <h1 class="mb-0 bread">About us</h1>
           </div>
         </div>
@@ -103,7 +103,7 @@
 	          <div class="pb-md-5">
 	          	<p>Welcome to World Grow Organic farm, a 100% organic farming area. Here we do agriculture under compliance with international organic standards. We grow vegetables and herbs and rely on the loving care of Mother Nature. Our hand-picked seeds are nourished by soil rich of organic nutrients, hydrated with naturally clean water sources from the Tham Luang and Khun Nam Nang Non mountains, and nurtured by the fantastic climate of northern Thailand to produce the highest quality vegetables and herbs. Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
 							<p>ที่นี่เราทำการเกษตรภายใต้มาตรฐานออร์แกนิคระดับสากล เราปลูกพืชผัก/สมุนไพร ด้วยใจรัก และอาศัยธรรมชาติในการดูแล อันได้แก่ ดินที่อุดมสมบูรณ์ไปด้วยอินทรียวัตถุ, แหล่งน้ำธรรมชาติจากถ้ำหลวง ขุนน้ำนางนอน, เมล็ดพันธุ์ที่เราคัดสรรเอง ประกอบกับสภาพภูมิอากาศที่เอื้อต่อการเจริญเติบโตของพืชผัก/สมุนไพร เป็นอย่างดี เหล่านี้จึงเป็นต้นกำเนิดของ เวิลด์โกรว์ ออร์แกนิค ฟาร์ม ที่ผู้บริโภคจะมั่นใจได้ว่า ผลิตภัณฑ์ที่มาจากฟาร์ม มีความสด สะอาด ปลอดภัย ไร้สารเคมี และมีมาตรฐาน อย่างแน่นอน</p>
-							<p><a href="shop.html" class="btn btn-primary">Shop now</a></p>
+							<p><a href="shop.php" class="btn btn-primary">Shop now</a></p>
 						</div>
 				</div>
 			</div>

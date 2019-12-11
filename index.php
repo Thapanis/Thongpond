@@ -46,8 +46,8 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">login</span>
+					    <div class="col-md-1 pr-1 d-flex topper align-items-center text-lg-right">
+						    <a class="text" href="/worldgrow/login/login.php">login</a>
 					    </div>
 				    </div>
 			    </div>
@@ -56,25 +56,25 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Worldgrow Organic Farm</a>
+	      <a class="navbar-brand" href="index.php">Worldgrow Organic Farm</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">Shop</a>
+                <a class="dropdown-item" href="cart.php">Cart</a>
+                <a class="dropdown-item" href="checkout.php">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -92,7 +92,7 @@
 	            <div class="col-md-12 ftco-animate text-center">
 	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
 	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-	              <p><a href="about.html" class="btn btn-primary">View Details</a></p>
+	              <p><a href="about.php" class="btn btn-primary">View Details</a></p>
 	            </div>
 
 	          </div>

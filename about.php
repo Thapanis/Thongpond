@@ -1,3 +1,8 @@
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +35,7 @@
   </head>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
-    	<div class="container">
+    <div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
 		    		<div class="row d-flex">
@@ -38,17 +43,25 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">088 623 9445</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    <div class="col-md pr-5 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-              <span class="text">39 Moo 1 Pongpha 57130, Thailand</span>
+					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
+							<?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+								} else {
+									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
-		  </div>
+		</div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -92,6 +105,7 @@
 
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
 			<div class="container">
+
 				<div class="row">
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
@@ -100,25 +114,67 @@
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
-	          	<p>Welcome to World Grow Organic farm, a 100% organic farming area. Here we do agriculture under compliance with international organic standards. We grow vegetables and herbs and rely on the loving care of Mother Nature. Our hand-picked seeds are nourished by soil rich of organic nutrients, hydrated with naturally clean water sources from the Tham Luang and Khun Nam Nang Non mountains, and nurtured by the fantastic climate of northern Thailand to produce the highest quality vegetables and herbs. Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-							<p>ที่นี่เราทำการเกษตรภายใต้มาตรฐานออร์แกนิคระดับสากล เราปลูกพืชผัก/สมุนไพร ด้วยใจรัก และอาศัยธรรมชาติในการดูแล อันได้แก่ ดินที่อุดมสมบูรณ์ไปด้วยอินทรียวัตถุ, แหล่งน้ำธรรมชาติจากถ้ำหลวง ขุนน้ำนางนอน, เมล็ดพันธุ์ที่เราคัดสรรเอง ประกอบกับสภาพภูมิอากาศที่เอื้อต่อการเจริญเติบโตของพืชผัก/สมุนไพร เป็นอย่างดี เหล่านี้จึงเป็นต้นกำเนิดของ เวิลด์โกรว์ ออร์แกนิค ฟาร์ม ที่ผู้บริโภคจะมั่นใจได้ว่า ผลิตภัณฑ์ที่มาจากฟาร์ม มีความสด สะอาด ปลอดภัย ไร้สารเคมี และมีมาตรฐาน อย่างแน่นอน</p>
-              <p style="text-align:center;">แผนการผลิตพืชอินทรีย์ Area 1</p>
-              <a href="#" class="img-prod"><img src="images/about-area1.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-              <a href="#" class="img-prod"><img src="images/about-area2.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-              <a href="#" class="img-prod"><img src="images/about-area3.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-              <p><a href="shop.php" class="btn btn-primary">Shop now</a></p>
+                <!-- -->
 						</div>
 				</div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>Welcome to World Grow Organic farm, a 100% organic farming area. Here we do agriculture under compliance with international organic standards. 
+              We grow vegetables and herbs and rely on the loving care of Mother Nature. Our hand-picked seeds are nourished by soil rich of organic nutrients, 
+              hydrated with naturally clean water sources from the Tham Luang and Khun Nam Nang Non mountains, and nurtured by the fantastic climate of northern 
+              Thailand to produce the highest quality vegetables and herbs. Consumers can be confident that all products from our farm are fresh, safe, clean, and 
+              chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
+            <p>ที่นี่เราทำการเกษตรภายใต้มาตรฐานออร์แกนิคระดับสากล เราปลูกพืชผัก/สมุนไพร ด้วยใจรัก และอาศัยธรรมชาติในการดูแล อันได้แก่ ดินที่อุดมสมบูรณ์ไปด้วยอินทรียวัตถุ, 
+              แหล่งน้ำธรรมชาติจากถ้ำหลวง ขุนน้ำนางนอน, เมล็ดพันธุ์ที่เราคัดสรรเอง ประกอบกับสภาพภูมิอากาศที่เอื้อต่อการเจริญเติบโตของพืชผัก/สมุนไพร เป็นอย่างดี เหล่านี้จึงเป็นต้นกำเนิดของ 
+              เวิลด์โกรว์ ออร์แกนิค ฟาร์ม ที่ผู้บริโภคจะมั่นใจได้ว่า ผลิตภัณฑ์ที่มาจากฟาร์ม มีความสด สะอาด ปลอดภัย ไร้สารเคมี และมีมาตรฐาน อย่างแน่นอน</p>
+            <h5><p style="text-align:center;">แผนการผลิตพืชอินทรีย์ Area 1</p></h5>
+            <img src="images/about-area1.jpg" width="100%">
+            <img src="images/about-area2.jpg" width="100%">
+            <img src="images/about-area3.jpg" width="100%">
+          </div>
+        </div>
+
 			</div>
+
+      <br/><br/>
 		</section>
-    
-		
+
+  <footer class="ftco-footer ftco-section">
+      <div class="container">
+    <div class="row">
+      <div class="mouse">
+        <a href="#" class="mouse-icon">
+          <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+        </a>
+      </div>
+    </div>
+    <div class="row mb-5">
+    <div class="col-md">
+      <div class="ftco-footer-widget mb-4">
+      <h2 class="ftco-heading-2">WorldGrow</h2>
+      <p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
+        provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
+      <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+        <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="ftco-footer-widget mb-4">
+        <h2 class="ftco-heading-2">Contact us</h2>
+        <div class="block-23 mb-3">
+        <ul>
+          <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
+          <li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
+          <li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+      </div>
+  </footer>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

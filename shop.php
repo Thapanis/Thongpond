@@ -1,3 +1,8 @@
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,17 +43,25 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">088 623 9445</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    <div class="col-md pr-5 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">39 Moo 1 Pongpha 57130, Thailand</span>
+					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
+							<?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+								} else {
+									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
-		  </div>
+		</div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -112,14 +125,14 @@
 							<th>Detail/Price</th>
 							<th></th>
 						</tr>
+						</thead>
 						<tbody>
 						<tr>
 							<td>1</td>
 							<td>A</td>
-							<th>Goodd</th>
+							<td>Goodd</td>
 							<td><button type="button" class="btn btn-success">Buy</button></td>
 						</tr>
-						<tbody>
 						<tr>
 							<td>2</td>
 							<td>B</td>
@@ -158,40 +171,40 @@
 
 		
     <footer class="ftco-footer ftco-section">
-		<div class="container">
+      	<div class="container">
 			<div class="row">
 				<div class="mouse">
-						  <a href="#" class="mouse-icon">
-							  <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-						  </a>
-					  </div>
+					<a href="#" class="mouse-icon">
+						<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+					</a>
+				</div>
 			</div>
-		  <div class="row mb-5">
+			<div class="row mb-5">
 			<div class="col-md">
-			  <div class="ftco-footer-widget mb-4">
+				<div class="ftco-footer-widget mb-4">
 				<h2 class="ftco-heading-2">WorldGrow</h2>
-				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
+				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
+					provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
 				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-				  <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
+					<li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
 				</ul>
-			  </div>
+				</div>
 			</div>
 			<div class="col-md">
-			  <div class="ftco-footer-widget mb-4">
-				  <h2 class="ftco-heading-2">Contact us</h2>
-				  <div class="block-23 mb-3">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Contact us</h2>
+					<div class="block-23 mb-3">
 					<ul>
-					  <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-					  <li><a href="#"><span class="icon icon-phone"></span><span class="text">088 623 9445</span></a></li>
-					  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></a></li>
+						<li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
+						<li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
+						<li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
 					</ul>
-				  </div>
-			  </div>
+					</div>
+				</div>
 			</div>
-		  </div>
-		  
-		</div>
-	  </footer>
+			</div>
+      	</div>
+    </footer>
     
   
 

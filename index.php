@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WorldGrow Organic Farm at Maesai Chiangrai</title>
+  	<title>WorldGrow Organic Farm at Maesai Chiangrai</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -32,11 +32,6 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
   </head>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
@@ -48,23 +43,25 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">088 623 9445</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    <div class="col-md pr-5 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-2 pr-1 d-flex topper align-items-center text-lg-right">
+					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
 							<?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>login</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
 								} else {
 									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
 								}
 							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
-		  </div>
+		</div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -75,20 +72,20 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="order.php">Order</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
-              </div>
-            </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-
+	          	<li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+	          	<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+						<a class="dropdown-item" href="shop.php">Shop</a>
+						<a class="dropdown-item" href="order.php">Order</a>
+						<a class="dropdown-item" href="checkout.php">Checkout</a>
+					</div>
+				</li>
+	          	<li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          	<li class="nav-item"><a href="contact.php" class="nav-link">Admin manage</a></li>
+	          	<li class="nav-item"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	        </ul>
+			
 	      </div>
 	    </div>
 	  </nav>
@@ -138,99 +135,95 @@
           </div>
         </div>   		
     	</div>
-    	<div class="container">
-    		<div class="row">
-									<style>
-											table {
-											font-family: arial, sans-serif;
-											width: 100%;
-											}
-
-											td, th {
-											border: 1px solid green;
-											text-align: left;
-											padding: 8px;
-											}
-									</style>
-												<table>
-												<tr>
-    											<th>Photo</th>
-													<td>Detail/price</td>
-													<td></td>
-												</tr>
-												<tr>
-													<th rowspan="2">A</th>
-													<td>Good health</td>
-													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
-												</tr>
-												<tr>
-													<td>120</td>
-												</tr>
-												<tr>
-													<th rowspan="2">B</th>
-													<td>Organic</td>
-													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
-												</tr>
-												<tr>
-													<td>150</td>
-												</tr>
-												<tr>
-													<th rowspan="2">C</th>
-													<td>Good </td>
-													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
-												</tr>
-												<tr>
-													<td>50</td>
-												</tr>
-									</table>
-
-    		</div>
-    	</div>
+		<div class="container">
+			<div class="table-responsive">          
+				<table class="table">
+				<thead>
+				<tr>
+					<th>Quantity</th>
+					<th>Product</th>
+					<th>Detail/Price</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td>A</td>
+					<td>Goodd</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>B</td>
+					<td>Good head</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>C</td>
+					<td>Pitt</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>D</td>
+					<td>Pitt</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>E</td>
+					<td>Pitt</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>F</td>
+					<td>Pitt</td>
+					<td><button type="button" class="btn btn-success">Buy</button></td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
     </section>
-	
-		
-    <hr>
 
     <footer class="ftco-footer ftco-section">
-      <div class="container">
-      	<div class="row">
-      		<div class="mouse">
-						<a href="#" class="mouse-icon">
-							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-						</a>
+      	<div class="container">
+			<div class="row">
+				<div class="mouse">
+					<a href="#" class="mouse-icon">
+						<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+					</a>
+				</div>
+			</div>
+			<div class="row mb-5">
+			<div class="col-md">
+				<div class="ftco-footer-widget mb-4">
+				<h2 class="ftco-heading-2">WorldGrow</h2>
+				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
+					provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
+				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+					<li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Contact us</h2>
+					<div class="block-23 mb-3">
+					<ul>
+						<li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
+						<li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
+						<li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
+					</ul>
 					</div>
+				</div>
+			</div>
+			</div>
       	</div>
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">WorldGrow</h2>
-              <p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          
-		  
-		  
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Contact us</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">088 623 9445</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
     </footer>
-    
-  
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

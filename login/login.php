@@ -20,12 +20,10 @@
 			<label>Password</label>
 			<input type="password" name="password">
 		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_user">Login</button>
+		<div class="input-group" style="display: flex;">
+			<button type="submit" class="btn btn-primary" name="login_user">Login</button>&nbsp;
+			<button type="submit" class="btn btn-primary" href="register.php">Sign up</button>
 		</div>
-		<p>
-			Not yet a member? <a href="register.php">Sign up</a>
-		</p>
 	</form>
 
 </body>

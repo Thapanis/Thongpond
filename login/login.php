@@ -20,10 +20,17 @@
 			<label>Password</label>
 			<input type="password" name="password">
 		</div>
+		<button type="submit" class="btn btn-primary btn-block" name="login_user">Login</button>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 		<div class="input-group" style="display: flex;">
-			<button type="submit" class="btn btn-primary" name="login_user">Login</button>&nbsp;
-			<button type="submit" class="btn btn-primary" href="register.php">Sign up</button>
+			<b style="font-size: 20px;">
+				Not yet a member? &nbsp; <a href="register.php" class="btn">Sign up</a>
+			</b>
 		</div>
+
 	</form>
 
 </body>

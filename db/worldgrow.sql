@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 03:28 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.8
+-- Generation Time: May 12, 2020 at 04:23 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -62,6 +61,20 @@ CREATE TABLE `product` (
   `price` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_name`, `product_type`, `product_detail`, `price`) VALUES
+(1, 'bell pepprer', 'vegetables', 'vitamin C and various caroteno', '80'),
+(2, 'Strawberry', 'vegetables', 'vitamin C and manganese', '120'),
+(3, 'Green Beans', 'vegetables', 'low-calorie ', '120'),
+(4, 'Purple Cabbage', 'vegetables', 'reduced inflammation', '120'),
+(5, 'Tomato', 'Fruits', 'reduced risk of heart disease ', '80'),
+(6, 'Broccoli ', 'vegetables', 'vitamins K and C', '80'),
+(7, 'Carrots ', 'vegetable', 'fiber, vitamin K1', '120'),
+(8, 'Fruit Juice', 'Juice', 'weight loss', '120');
+
 -- --------------------------------------------------------
 
 --
@@ -86,8 +99,18 @@ CREATE TABLE `user` (
   `user_name` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `user_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `user_address` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `user_role` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   `phone` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_address`, `user_role`, `phone`) VALUES
+(1, 'tine', 'tine', 'tre', 'U', 43243),
+(2, 'mos', 'mos', '2134', 'U', 432432),
+(3, 'admin', 'admin', 'home', 'A', 123456789);
 
 --
 -- Indexes for dumped tables
@@ -148,7 +171,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `transaction`
@@ -160,7 +183,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

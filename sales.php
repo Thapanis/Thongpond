@@ -1,3 +1,8 @@
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,8 +32,10 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <body class="goto-here">
-		<div class="py-1 bg-primary">
+  </head>
+
+  <body class="goto-here">
+  <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -42,48 +49,110 @@
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">login</span>
+              <?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+								} else {
+									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
 		  </div>
     </div>
-	<!--?php include('h.php');?-->
-    <!--?php include('datatable.php');?-->
-  </head>
-  <body>
-  <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-  	<div class="row">
-    	<div class="col-md-2">
-        <?php include('menu.php');?>        	 
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" style="align=center" href="index.php">Worldgrow Organic Farm</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.php" class="nav-link">Back to home</a></li>
+          </ul>
+        </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <div class="container">
+      <div class="row">
+        <?php include('banner.php');?>
       </div>
+      <div class="row">
+        <div class="col-md-2">
+          <?php include('menu.php');?>        	 
+        </div>
+        <div class="col-md-10">
 
+        <br>
+        <h3 align="left"> สรุปยอดขาย/เดือน </h3>
+        <table id="example" class="display" cellspacing="0" border="1">
+          <thead>
+              <tr align="center">
+                <th width="10%">วันที่ทำรายการ</th>
+                <th width="5%">ลูกค้า</th>
+                <th width="5%">เลขที่สั่งซื้อ</th>
+                <th width="10%">ราคารวม</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr align="center">
+              <th width="10%">01/01/2020</th>
+              <th width="10%">Mos</th>
+              <th width="10%">3</th>
+              <th width="10%">4000</th>
+            <tr>
+          </tbody>
+        </table>
 
-      <div class="col-md-10">
-        <h3 align="center"> สรุปยอดขาย/เดือน </h3>
-           <table width="100%" border="1" cellspacing="0" class="display" id="example">
-		    <thead>
-        <tr align="center">
-            <th width="10%">วันที่ทำรายการ</th>
-            <th width="5%">ลูกค้า</th>
-            <th width="5%">เลขที่สั่งซื้อ</th>
-            <th width="10%">ราคารวม</th>
-        </tr>
-        <tr align="center">
-        <th width="10%">01/01/2020</th>
-        <th width="10%">Mos</th>
-        <th width="10%">3</th>
-        <th width="10%">4000</th>
-        <tr>
-        <td colspan="4">รวมเงินทั้งหมด</td>
-            </table>
+        </div>
       </div>
     </div>
- </div>
+
+    <br/><br/><br/>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="mouse">
+            <a href="#" class="mouse-icon">
+              <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+            </a>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">WorldGrow</h2>
+            <p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
+              provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+              <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Contact us</h2>
+            <div class="block-23 mb-3">
+            <ul>
+              <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
+              <li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
+              <li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+			</div>
+    </div>
+    </footer>
 
  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

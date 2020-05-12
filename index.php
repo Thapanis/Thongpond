@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
   </head>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
@@ -75,7 +80,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="cart.php">Cart</a>
+                <a class="dropdown-item" href="order.php">Order</a>
                 <a class="dropdown-item" href="checkout.php">Checkout</a>
               </div>
             </li>
@@ -129,55 +134,60 @@
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Featured Products</span>
-            <h2 class="mb-4">Our Products</h2>
+            <span class="subheading">Our Products</span>
           </div>
         </div>   		
     	</div>
     	<div class="container">
     		<div class="row">
+									<style>
+											table {
+											font-family: arial, sans-serif;
+											width: 100%;
+											}
 
-				<?php
-					$count = 1;
-
-					$sql = "SELECT * FROM product LIMIT 8";
-					if($result = mysqli_query($conn, $sql)){
-						if(mysqli_num_rows($result) > 0){
-							while($row = mysqli_fetch_array($result)){
-								echo "<div class='col-md-6 col-lg-3 ftco-animate'>";
-									echo "<div class='product'>";
-										echo "<a href='#' class='img-prod'><img class='img-fluid' src='images/product-".$count.".jpg' alt='Colorlib Template'>";
-											// echo "<span class='status'>30%</span>";
-											echo "<div class='overlay'></div>";
-										echo "</a>";
-										echo "<div class='text py-3 pb-4 px-3 text-center'>";
-											echo "<h3><a href='#'>".$row['product_name']."</a></h3>";
-											echo "<div class='d-flex'>";
-												echo "<div class='pricing'>";
-													echo "<p class='price'><span class='price-sale'>".$row['price']."</span></p>";
-													// <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-												echo "</div>";
-											echo "</div>";
-											echo "<div class='bottom-area d-flex px-3'>";
-												echo "<div class='m-auto d-flex'>";
-													echo "<a href='#' class='buy-now d-flex justify-content-center align-items-center mx-1'>";
-														echo "<span><i class='ion-ios-cart'></i></span>";
-													echo "</a>";
-												echo "</div>";
-											echo "</div>";
-										echo "</div>";
-									echo "</div>";
-								echo "</div>";
-
-								$count++;
-							}
-						}
-					}
-				?>
+											td, th {
+											border: 1px solid green;
+											text-align: left;
+											padding: 8px;
+											}
+									</style>
+												<table>
+												<tr>
+    											<th>Photo</th>
+													<td>Detail/price</td>
+													<td></td>
+												</tr>
+												<tr>
+													<th rowspan="2">A</th>
+													<td>Good health</td>
+													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
+												</tr>
+												<tr>
+													<td>120</td>
+												</tr>
+												<tr>
+													<th rowspan="2">B</th>
+													<td>Organic</td>
+													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
+												</tr>
+												<tr>
+													<td>150</td>
+												</tr>
+												<tr>
+													<th rowspan="2">C</th>
+													<td>Good </td>
+													<th rowspan="2"><button type="submit" class="btn btn-primary" id="btn">Buy</button></th>
+												</tr>
+												<tr>
+													<td>50</td>
+												</tr>
+									</table>
 
     		</div>
     	</div>
     </section>
+	
 		
     <hr>
 
@@ -200,17 +210,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Menu</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
+          
 		  
 		  
           <div class="col-md">

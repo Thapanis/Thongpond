@@ -1,10 +1,11 @@
+<!--?php include('access.php');?-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WorldGrow Organic Farm at Maesai Chiangrai</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
@@ -27,7 +28,6 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
     <body class="goto-here">
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -50,33 +50,55 @@
 		    </div>
 		  </div>
     </div>
+	<!--?php include('h.php');?-->
+    <!--?php include('datatable.php');?-->
   </head>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" style="align=center" href="index.php">Worldgrow Organic Farm</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      
-	    </div>
-	  </nav>
-    <!-- END nav -->
-
-    <?php include('banner.php');?>
-    <!-- END banner -->
-    <div class="row">
+  <body>
+  <div class="container">
+  <div class="row">
+         <?php include('banner.php');?>
+   </div>
+  	<div class="row">
     	<div class="col-md-2">
         <?php include('menu.php');?>        	 
-    </div>
-    <!-- END list-select -->
-<div class="col-md-10">
-<br>
-<a href="list_payment.php" class="btn btn-primary"> รายการสั่งซื้อใหม่ </a>
-<a href="paid-done.php" class="btn btn-danger"> ชำระเงินแล้ว </a>
+      </div>
 
-</div>
-  <script src="js/jquery.min.js"></script>
+
+      <div class="col-md-10">
+        <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> + เพิ่มสินค้า </a> </h3>
+           <table width="100%" border="1" cellspacing="0" class="display" id="example">
+		    <thead>
+          <tr align="center">
+            <th width="10%">ภาพสินค้า</th>
+            <th width="5%">id</th>
+            <th width="10%">ชื่อสินค้า</th>
+            <th width="50%">รายละเอียด</th>
+            <th width="5%">ราคา</th>
+            <th width="50%">ประเภทสินค้า</th>
+            <th width="7%">จำนวนสินค้า</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
+          </tr>
+          
+            <tr align="center">
+            <th width="10%"></th>
+            <th width="5%"></th>
+            <th width="10%"></th>
+            <th width="50%"></th>
+            <th width="5%"></th>
+            <th width="50%"></th>
+            <th width="7%"></th>
+            <th></th>
+            <th></th>
+            </tr>
+            </thead>
+          
+            </table>
+      </div>
+    </div>
+ </div>
+
+ <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -92,6 +114,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
   </body>
 </html>
+<!--?php  include('f.php');?-->

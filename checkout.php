@@ -64,8 +64,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="cart.php">Cart</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
+                <a class="dropdown-item" href="order.php">Order</a>
+                <a class="dropdown-item active " href="checkout.php">Checkout</a>
               </div>
             </li>
 	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
@@ -153,15 +153,30 @@
 										  <label><input type="radio" name="optradio"> Ship to different address</label>
 										</div>
 									</div>
-                </div>
+                		</div>
 	            </div>
+					<div class="form-group">
+										<div class="col-mt-4">
+											<div class="radio">
+												<label><input type="radio" name="optradio"></label>
+												<tr>
+													<td align="right" valign="middle">Attach a money transfer slip :</td>
+													<td colspan="2"><label for="p_img1"></label>
+													<input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
+        										</tr>
+											</div>
+										</div>
+									</div>
+										<a href="conclusion.php" class="btn btn-info" role="button">Success</a>
+										<button type="button" class="btn btn-danger">Clear</button>
+
 	          </form><!-- END -->
 					</div>
 					<div class="col-xl-5">
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Cart Total</h3>
+	          			<h3 class="billing-heading mb-4">Order Total</h3>
 	          			<p class="d-flex">
 		    						<span>Subtotal</span>
 		    						<span>$20.60</span>
@@ -179,9 +194,10 @@
 		    						<span>Total</span>
 		    						<span>$17.60</span>
 		    					</p>
-								</div>
+								
+					</div>
 	          	</div>
-	          	<div class="col-md-12">
+	          	<!--div class="col-md-12">
 	          		<div class="cart-detail p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Payment Method</h3>
 									<div class="form-group">
@@ -220,58 +236,7 @@
         </div>
       </div>
     </section> <!-- .section -->
-
-		
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="mouse">
-						  <a href="#" class="mouse-icon">
-							  <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-						  </a>
-					  </div>
-			</div>
-		  <div class="row mb-5">
-			<div class="col-md">
-			  <div class="ftco-footer-widget mb-4">
-				<h2 class="ftco-heading-2">WorldGrow</h2>
-				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-				  <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-				</ul>
-			  </div>
-			</div>
-			<div class="col-md">
-			  <div class="ftco-footer-widget mb-4 ml-md-5">
-				<h2 class="ftco-heading-2">Menu</h2>
-				<ul class="list-unstyled">
-				  <li><a href="#" class="py-2 d-block">Shop</a></li>
-				  <li><a href="#" class="py-2 d-block">About</a></li>
-				  <li><a href="#" class="py-2 d-block">Journal</a></li>
-				  <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-				</ul>
-			  </div>
-			</div>
-			
-			
-			<div class="col-md">
-			  <div class="ftco-footer-widget mb-4">
-				  <h2 class="ftco-heading-2">Have a Questions?</h2>
-				  <div class="block-23 mb-3">
-					<ul>
-					  <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-					  <li><a href="#"><span class="icon icon-phone"></span><span class="text">088 623 9445</span></a></li>
-					  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></a></li>
-					</ul>
-				  </div>
-			  </div>
-			</div>
-		  </div>
-		  
-		</div>
-	  </footer>
-    
-  
+	
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

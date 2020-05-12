@@ -3,7 +3,7 @@
   <head>
     <title>WorldGrow Organic Farm at Maesai Chiangrai</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <body class="goto-here">
+  
+  <body class="goto-here">
 		<div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -50,7 +50,6 @@
 		    </div>
 		  </div>
     </div>
-  </head>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" style="align=center" href="index.php">Worldgrow Organic Farm</a>
@@ -61,21 +60,41 @@
 	      
 	    </div>
 	  </nav>
+</head>
     <!-- END nav -->
 
     <?php include('banner.php');?>
     <!-- END banner -->
+
     <div class="row">
     	<div class="col-md-2">
         <?php include('menu.php');?>        	 
     </div>
-    <!-- END list-select -->
-<div class="col-md-10">
-<br>
-<a href="list_payment.php" class="btn btn-primary"> รายการสั่งซื้อใหม่ </a>
-<a href="paid-done.php" class="btn btn-danger"> ชำระเงินแล้ว </a>
 
-</div>
+    
+    <!-- END list-select -->
+    <div class="row">
+    	<div class="col-md-2">
+        <!--b>  ADMIN : <?php include('mm.php');?> </b-->
+        <br>
+        <!--?php include('menu.php');?-->        	 
+      </div>
+        <div class="col-md-8">
+        <h3 align="left"> การจัดการข้อมูล Member  <a href="add_member.php" class="btn btn-primary"> + เพิ่มข้อมูลสมาชิก </a></h3>
+          <table id="example" class="display" cellspacing="0" border="1">
+		    <thead>
+            <tr align="center">
+              <th width="5%">member_id</th>
+              <th width="10%">member_name</th>
+              <th width="10%">member_lname</th>
+              <th width="10%">member_address</th>
+              <th width="15%">Telephone number</th>
+              <th width="20%">รหัสผู้ใช้</th>
+              <th width="5%">ลบ</th>
+            </tr>
+        </thead>
+
+  
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

@@ -64,13 +64,13 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="cart.php">Cart</a>
+                <a class="dropdown-item active" href="order.php">Order</a>
                 <a class="dropdown-item" href="checkout.php">Checkout</a>
               </div>
             </li>
 	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -82,8 +82,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Cart</span></p>
-            <h1 class="mb-0 bread">My Cart</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Order</span></p>
+            <h1 class="mb-0 bread"></h1>My Order</h1>
           </div>
         </div>
       </div>
@@ -92,49 +92,50 @@
     <section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
-    			<div class="col-md-12 ftco-animate">
-    				<div class="cart-list">
-	    				<table class="table">
-						    <thead class="thead-primary">
-						      <tr class="text-center">
-						        <th>&nbsp;</th>
-						        <th>&nbsp;</th>
-						        <th>Product name</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
-						        <th>Total</th>
-						      </tr>
-						    </thead>
-						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+    				<div class="col-md-12 ftco-animate">
+    					<div class="cart-list">
+	    					<table class="table">
+						    	<thead class="thead-primary">
+						      	<tr class="text-center">
+						       		<th>&nbsp;</th>
+									<th>No</th>
+						       		<th>&nbsp;</th>
+									<th>Product name</th>
+									<th>Unit Price</th>
+									<th>Quantity</th>
+									<th>Total</th>
+						      	</tr>
+						    	</thead>
+						    	<tbody>
+									<tr class="text-center">
+									<td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+									<td>1</td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
+						        	<td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
 						        
-						        <td class="product-name">
+						        	<td class="product-name">
 						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
+						        	</td>
 						        
-						        <td class="price">$4.90</td>
+						        	<td class="price">$4.90</td>
 						        
-						        <td class="quantity">
+						        	<td class="quantity">
 						        	<div class="input-group mb-3">
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
+					    </div>
+					         		</td>
 						        
 						        <td class="total">$4.90</td>
 						      </tr><!-- END TR-->
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
+						        <td>1</td>
 						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
+
 						        </td>
 						        
 						        <td class="price">$15.70</td>
@@ -143,16 +144,18 @@
 						        	<div class="input-group mb-3">
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
 					          	</div>
-					          </td>
+					        </td>
 						        
 						        <td class="total">$15.70</td>
 						      </tr><!-- END TR-->
-						    </tbody>
-						  </table>
+							
+						    	</tbody>
+							</table>
+						  <p><a href="checkout.php" class="btn btn-primary py-50 px-60">Buy now</a></p>
 					  </div>
     			</div>
     		</div>
-    		<div class="row justify-content-end">
+    		<!--div class="row justify-content-end">
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Coupon Code</h3>
@@ -212,10 +215,10 @@
     			</div>
     		</div>
 			</div>
-		</section>
+		</section-->
 
 		
-		<footer class="ftco-footer ftco-section">
+		<!--footer class="ftco-footer ftco-section">
 			<div class="container">
 			
 			  <div class="row mb-5">
@@ -228,17 +231,7 @@
 					</ul>
 				  </div>
 				</div>
-				<div class="col-md">
-				  <div class="ftco-footer-widget mb-4 ml-md-5">
-					<h2 class="ftco-heading-2">Menu</h2>
-					<ul class="list-unstyled">
-					  <li><a href="#" class="py-2 d-block">Shop</a></li>
-					  <li><a href="#" class="py-2 d-block">About</a></li>
-					  <li><a href="#" class="py-2 d-block">Journal</a></li>
-					  <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-					</ul>
-				  </div>
-				</div>
+				
 				
 				
 				<div class="col-md">
@@ -256,7 +249,7 @@
 			  </div>
 			  
 			</div>
-		  </footer>
+		  </footer-->
     
   
 

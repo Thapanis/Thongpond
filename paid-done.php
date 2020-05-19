@@ -47,6 +47,11 @@
 				    </div>
 			    </div>
 		    </div>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.php" class="nav-link">Back to home</a></li>
+          </ul>
+        </div>
 		  </div>
     </div>
 	<!--?php include('h.php');?-->
@@ -65,27 +70,30 @@
 
       <div class="col-md-10">
         <h3 align="center"> ชำระเงินเรียบร้อยแล้ว </h3>
-           <table width="100%" border="1" cellspacing="0" class="display" id="example">
-		    <thead>
-        <tr align="center">
-            <th width="10%">รหัสการสั่งซื้อ</th>
-            <th width="5%">ลูกค้า</th>
-            <th width="5%">จำนวนรายการ</th>
-            <th width="10%">ราคารวม</th>
-            <th width="10%">สถานะ</th>
-            <th width="10%">รูปหลักฐานการโอน</th>
-            <th width="10%">วันที่ทำรายการ</th>
-        </tr>
-        <tr align="center">
-        <th width="10%">00000000001</th>
-        <th width="10%">Mos</th>
-        <th width="10%">3</th>
-        <th width="10%">4000</th>
-        <th width="10%">ชำระเงินเรียบร้อยแล้ว</th>
-        <th width="10%">รูปหลักฐาน</th>
-        <th width="10%">10/10/2020</th>
-        <tr>
-            </table>
+        <table class="table">
+          <thead>
+              <tr>
+                <th>รหัสการสั่งซื้อ</th>
+                <th>ลูกค้า</th>
+                <th>จำนวนรายการ</th>
+                <th>ราคารวม</th>
+                <th>สถานะ</th>
+                <th>รูปหลักฐานการโอน</th>
+                <th>วันที่ทำรายการ</th>
+              </tr>
+          </thead>
+            <tbody>
+                <tr>
+                  <td>002</td>
+                  <td>SADBOT</td>
+                  <td>2</td>
+                  <td>100</td>
+                  <td>ชำระเงินแล้ว</td>
+                  <td></td>
+                  <td>20/02/2020</td>
+                </tr>
+              </tbody>
+				</table>
       </div>
     </div>
  </div>

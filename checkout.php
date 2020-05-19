@@ -184,7 +184,7 @@
 											</div>
 										</div>
 									</div>
-										<a href="conclusion.php" class="btn btn-info" role="button">Success</a>
+										<a href="display.php" class="btn btn-info" role="button">Success</a>
 										<button type="button" class="btn btn-danger">Clear</button>
 
 	          </form><!-- END -->

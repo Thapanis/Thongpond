@@ -93,63 +93,51 @@
 
         <br>
         <h3 align="left"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> + เพิ่มสินค้า </a> </h3>
-        <table id="example" class="display" cellspacing="0" border="1">
-          <thead>
-              <tr align="center">
-                <th width="10%">ภาพสินค้า</th>
-                <th width="5%">id</th>
-                <th width="10%">ชื่อสินค้า</th>
-                <th width="50%">รายละเอียด</th>
-                <th width="5%">ราคา</th>
-                <th width="50%">ประเภทสินค้า</th>
-                <th width="7%">จำนวนสินค้า</th>
-                <th>แก้ไข</th>
-                <th>ลบ</th>
-              </tr>
-          </thead>
-        </table>
+        <table class="table">
+				<thead>
+				<tr>
+					<th>ภาพสินค้า</th>
+					<th>id</th>
+					<th>ชื่อสินค้า</th>
+					<th>รายละเอียด</th>
+          <th>ราคา</th>
+          <th>ประเภทสินค้า</th>
+          <th>จำนวนสินค้า</th>
+          <th>แก้ไข</th>
+          <th>Delete</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td></td>
+					<td>01</td>
+					<td>Banana</td>
+					<td>Sweet</td>
+          <td>15</td>
+          <td>Friut</td>
+          <td>1</td>
+          <td><button type="button" class="btn btn-primary">EDIT</button></td>
+          <td><button type="button" class="btn btn-danger">Delete</button></td>
+				</tr>
+				<tr>
+        <td></td>
+					<td>02</td>
+					<td>Orange</td>
+					<td>Sweet$GoodHeath</td>
+          <td>15</td>
+          <td>Friut</td>
+          <td>20</td>
+          <td><button type="button" class="btn btn-primary">EDIT</button></td>
+          <td><button type="button" class="btn btn-danger">Delete</button></td>
+				</tr>
+				</tbody>
+				</table>
 
         </div>
       </div>
     </div>
 
     <br/><br/><br/>
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="mouse">
-            <a href="#" class="mouse-icon">
-              <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-            </a>
-          </div>
-        </div>
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">WorldGrow</h2>
-            <p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
-              provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Contact us</h2>
-            <div class="block-23 mb-3">
-            <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-              <li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
-              <li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
-            </ul>
-            </div>
-          </div>
-        </div>
-			</div>
-    </div>
-    </footer>
 
  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

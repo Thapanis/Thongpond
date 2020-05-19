@@ -5,15 +5,15 @@
     $username = $_REQUEST['username'];
 	$password = $_REQUEST['password'];
 
-	$sql = "SELECT * FROM user 
-			WHERE user_name = '$username'
-			AND user_password = '$password'";
+	$sql = "SELECT * FROM member 
+			WHERE member_name = '$username'
+			AND member_password = '$password'";
 	
 	if($result = mysqli_query($conn, $sql)){
 		if(mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_array($result)){
-				$_SESSION["username"] = $row['user_name'];
-				$_SESSION["role"] = $row['user_role'];
+				$_SESSION["user_name"] = $row['member_name'];
+				$_SESSION["user_role"] = $row['member_role'];
 			}
 
 			header("Location: ./../index.php");

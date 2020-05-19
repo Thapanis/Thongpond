@@ -6,6 +6,7 @@
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $schema);
+    mysqli_query($conn, "SET NAMES 'utf8' ");
 
     // Check connection
     if ($conn->connect_error) {

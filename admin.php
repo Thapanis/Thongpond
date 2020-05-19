@@ -50,10 +50,10 @@
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
               <?php
-								if(!isset($_SESSION["username"])){
+								if(!isset($_SESSION["member_name"])){
 									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>USERNAME : ".$_SESSION["member_name"]."</span>";
 									echo "&nbsp;&nbsp;";
 									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
 								}

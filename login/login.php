@@ -14,7 +14,7 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" >
+			<input type="text" name="membername" >
 		</div>
 		<div class="input-group">
 			<label>Password</label>

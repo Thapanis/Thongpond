@@ -1,18 +1,21 @@
 <?php
     include 'connectdb.php';
     
-    $username = $_REQUEST['username'];
+	$membername = $_REQUEST['membername'];
+	$fname = $_REQUEST['fname'];
+	$lname = $_REQUEST['lname'];
 	$password = $_REQUEST['password_1'];
 	$addr = $_REQUEST['address'];
 	$phone = $_REQUEST['phone'];
 
-	$sqlCheck = "SELECT * FROM user 
-			WHERE user_name = '$username'";
+	$sqlCheck = "SELECT * FROM member 
+			WHERE member_name = '$membername'";
 
-    $sql = "INSERT INTO user (user_name, user_password, user_address, phone) 
-			VALUES ('$username', '$password', '$addr', '$phone')";
-	
+    $sql = "INSERT INTO member (member_name, member_fname, member_lname, member_password,address, phone) 
+			VALUES ('$membername', '$fname', '$lname', '$password', '$addr', '$phone')";
+
 	if($result = mysqli_query($conn, $sqlCheck)){
+		
 		// Check username is duplicate
 		if(mysqli_num_rows($result) > 0){
 			header("Location: register.php");
@@ -26,5 +29,5 @@
 		}
 	}
 
-    $conn->close();
+	$conn->close();
 ?>

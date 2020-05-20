@@ -38,9 +38,15 @@
 		<div class="input-group">
 			<button type="submit" class="btn" name="reg_user">Register</button>
 		</div>
-		<p>
-			Already a member? <a href="login.php">Sign in</a>
-		</p>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="input-group" style="display: flex;">
+			<b style="font-size: 20px;">
+				Already a member? &nbsp; <a href="login.php" class="btn">Sign in</a>
+			</b>
+		</div>
 	</form>
 </body>
 </html>

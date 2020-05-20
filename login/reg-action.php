@@ -11,8 +11,8 @@
 	$sqlCheck = "SELECT * FROM member 
 			WHERE member_name = '$membername'";
 
-    $sql = "INSERT INTO member (member_name, member_fname, member_lname, member_password,address, phone) 
-			VALUES ('$membername', '$fname', '$lname', '$password', '$addr', '$phone')";
+    $sql = "INSERT INTO member (member_name, member_fname, member_lname, member_password, address, phone, member_role) 
+			VALUES ('$membername', '$fname', '$lname', '$password', '$addr', '$phone', 'U')";
 
 	if($result = mysqli_query($conn, $sqlCheck)){
 		

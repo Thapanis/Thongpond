@@ -20,7 +20,9 @@
 			<label>Password</label>
 			<input type="password" name="password">
 		</div>
-		<button type="submit" class="btn btn-primary btn-block" name="login_user">Login</button>
+		<div class="row">
+			<button type="submit" class="btn btn-primary btn-block" name="login_user">Login</button>
+		</div>
 		<br/>
 		<br/>
 		<br/>

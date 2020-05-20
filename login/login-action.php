@@ -12,8 +12,8 @@
 	if($result = mysqli_query($conn, $sql)){
 		if(mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_array($result)){
-				$_SESSION["member_name"] = $row['member_name'];
-				$_SESSION["member_role"] = $row['member_role'];
+				$_SESSION["username"] = $row['member_name'];
+				$_SESSION["role"] = $row['member_role'];
 			}
 
 			header("Location: ./../index.php");

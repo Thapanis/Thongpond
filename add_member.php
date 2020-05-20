@@ -83,7 +83,7 @@
         <div class="form-group">
         <div class="col-sm-100" align="left"> last name : </div>
           <div class="col-sm-100" align="left">
-            <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="lname" pattern="^[a-zA-Z0-9]+$" minlength="2" />
+            <input  name="admin_pass" type="text" required class="form-control" id="admin_pass" placeholder="lname" pattern="^[a-zA-Z0-9]+$" minlength="2" />
           </div>
         </div>
         <div class="form-group">

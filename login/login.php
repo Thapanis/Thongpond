@@ -14,11 +14,11 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="membername" >
+			<input type="text" required class="form-control" name="membername" >
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password">
+			<input type="password" required class="form-control" name="password">
 		</div>
 		<div class="row">
 			<button type="submit" class="btn btn-primary btn-block" name="login_user">Login</button>

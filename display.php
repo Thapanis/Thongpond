@@ -125,7 +125,7 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Contact product by</h2>
               <p>0822485557</p>
-              <button type="button" class="btn btn-primary btn-lg">Ok</button>
+              <a href="index.php" class="btn btn-info" role="button">OK</a>
 
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>

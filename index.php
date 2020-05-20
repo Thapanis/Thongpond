@@ -87,7 +87,7 @@
 						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>Admin manage</a></li>";
 					}
 				?>
-	          	<li class="nav-item"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          	<li class="nav-item"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	        </ul>
 			
 	      </div>

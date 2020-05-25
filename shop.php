@@ -50,11 +50,11 @@
 					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
 							<?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -72,19 +72,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">หน้าหลัก</a></li>
 	          <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="order.php">Order</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">ร้านค้า</a>
+                <a class="dropdown-item" href="order.php">รายการสั่งซื้อ</a>
+                <a class="dropdown-item" href="checkout.php">ชำระเงิน</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">เกี่ยวกับ</a></li>
 			  	<?php
 					if(isset($_SESSION["role"]) && $_SESSION["role"] == "A"){
-						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>Admin manage</a></li>";
+						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
 	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -111,11 +111,11 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-    					<li><a href="#" class="active">All</a></li>
-    					<li><a href="#">Vegetables</a></li>
-    					<li><a href="#">Fruits</a></li>
-    					<li><a href="#">Juice</a></li>
-    					<li><a href="#">Dried</a></li>
+    					<li><a href="#" class="active">ทั้งหมด</a></li>
+    					<li><a href="#">ผัก</a></li>
+    					<li><a href="#">ผลไม้</a></li>
+    					<li><a href="#">น้ำผลไม้</a></li>
+    					<li><a href="#">ของแห้ง</a></li>
     				</ul>
     			</div>
     		</div>
@@ -124,49 +124,57 @@
   						<table class="table">
 						<thead>
 						<tr>
-							<th>Quantity</th>
-							<th>Product</th>
-							<th>Detail/Price</th>
+							<th>จำนวน</th>
+							<th>สินค้า</th>
+							<th>รายละเอียด</br>ราคา</th>
 							<th></th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<td>1</td>
-							<td>A</td>
-							<td>Goodd</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>B</td>
-							<td>Good head</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>C</td>
-							<td>Pitt</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>D</td>
-							<td>Pitt</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>E</td>
-							<td>Pitt</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>F</td>
-							<td>Pitt</td>
-							<td><button type="button" class="btn btn-success">Buy</button></td>
-						</tr>
+						<tbody>
+							<tr>
+								<td>2</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
+								<td>ผงดอกอัญชันอบแห้ง 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
+								<td>ผงพริกไทยดำ 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0003.jpg);"></div></td>
+								<td>ผงขมิ้นเหลือง 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0004.jpg);"></div></td>
+								<td>ผงบะระเพ็ด 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0005.jpg);"></div></td>
+								<td>ผงไพล 100% น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0006.jpg);"></div></td>
+								<td>ผงขิง 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0007.jpg);"></div></td>
+								<td>ผงฟ้าทะลายโจร 100%<br/>฿100</td>
+								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+							</tr>
+
 						</tbody>
 						</table>
 					</div>

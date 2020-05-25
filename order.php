@@ -50,11 +50,11 @@
 					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
 							<?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -72,19 +72,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">หน้าหลัก</a></li>
 	          <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item active" href="order.php">Order</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">ร้านค้า</a>
+                <a class="dropdown-item active" href="order.php">รายการสินค้า</a>
+                <a class="dropdown-item" href="checkout.php">ชำระเงิน</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">เกี่ยวกับ</a></li>
 			  	<?php
 					if(isset($_SESSION["role"]) && $_SESSION["role"] == "A"){
-						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>Admin manage</a></li>";
+						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
 	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -99,8 +99,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Order</span></p>
-            <h1 class="mb-0 bread"></h1>My Order</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">หน้าหลัก</a></span> <span>Order</span></p>
+            <h1 class="mb-0 bread"></h1>รายการสินค้าของฉัน</h1>
           </div>
         </div>
       </div>
@@ -117,10 +117,10 @@
 						       		<th>&nbsp;</th>
 									<th>No</th>
 						       		<th>&nbsp;</th>
-									<th>Product name</th>
-									<th>Unit Price</th>
-									<th>Quantity</th>
-									<th>Total</th>
+									<th>ชื่อสินค้า</th>
+									<th>ราคาต่อชิ้น</th>
+									<th>จำนวน</th>
+									<th>ราคารวม</th>
 						      	</tr>
 						    	</thead>
 						    	<tbody>
@@ -128,13 +128,13 @@
 									<td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 									<td>1</td>
 						        
-						        	<td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
+						        	<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0007.jpg);"></div></td>
 						        
 						        	<td class="product-name">
-						        	<h3>Bell Pepper</h3>
+						        	<h3>ผงฟ้าทะลายโจร 100%</h3>
 						        	</td>
 						        
-						        	<td class="price">$4</td>
+						        	<td class="price">฿100</td>
 						        
 						        	<td class="quantity">
 						        	<div class="input-group mb-3">
@@ -142,20 +142,20 @@
 					    </div>
 					         		</td>
 						        
-						        <td class="total">$4</td>
+						        <td class="total">฿100</td>
 						      </tr><!-- END TR-->
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        <td>1</td>
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
+						        <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
+						        	<h3>ผงดอกอัญชันอบแห้ง 100%</h3>
 
 						        </td>
 						        
-						        <td class="price">$15</td>
+						        <td class="price">฿120</td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
@@ -163,12 +163,12 @@
 					          	</div>
 					        </td>
 						        
-						        <td class="total">$15</td>
+						        <td class="total">฿120</td>
 						      </tr><!-- END TR-->
 							
 						    	</tbody>
 							</table>
-						  <p><a href="checkout.php" class="btn btn-primary py-50 px-60">Buy now</a></p>
+						  <p><a href="checkout.php" class="btn btn-primary py-50 px-60">สั่งสินค้า</a></p>
 					  </div>
     			</div>
     		</div>

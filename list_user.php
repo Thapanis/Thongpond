@@ -51,11 +51,11 @@
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
               <?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -74,7 +74,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.php" class="nav-link">Back to home</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">กลับไปหน้าหลัก</a></li>
           </ul>
         </div>
 	    </div>
@@ -107,22 +107,22 @@
           </thead>
             <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>A</td>
-                  <td>Goodd</td>
+                  <td>01</td>
+                  <td>Thapanis</td>
+                  <td>Thondpond</td>
                   <td>449/15</td>
                   <td>0805141755</td>
                   <td>1234</td>
-                  <td><button type="button" class="btn btn-danger">Delete</button></td>
+                  <td><button type="button" class="btn btn-danger">ลบ</button></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>SADBOT</td>
-                  <td>SADBOY</td>
+                  <td>ponlakrit</td>
+                  <td>KaewMoon</td>
                   <td>449/16</td>
                   <td>0805145713</td>
                   <td>1234</td>
-                  <td><button type="button" class="btn btn-danger">Delete</button></td>
+                  <td><button type="button" class="btn btn-danger">ลบ</button></td>
                 </tr>
               </tbody>
 				</table>

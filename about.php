@@ -50,11 +50,11 @@
 					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
 							<?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -72,19 +72,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">หน้าหลัก</a></li>
 	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="order.php">Order</a>
-                <a class="dropdown-item active " href="checkout.php">Checkout</a>
+                <a class="dropdown-item" href="shop.php">ร้านค้า</a>
+                <a class="dropdown-item" href="order.php">รายการสั่งซื้อสินค้า</a>
+                <a class="dropdown-item active " href="checkout.php">ชำระเงิน</a>
               </div>
             </li>
-	          <li class="nav-item active"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item active"><a href="about.php" class="nav-link">เกี่ยวกับเรา</a></li>
             <?php
 					    if(isset($_SESSION["role"]) && $_SESSION["role"] == "A"){
-                echo "<li class='nav-item'><a href='admin.php' class='nav-link'>Admin manage</a></li>";
+                echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
               }
 				    ?>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -99,8 +99,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>About us</span></p>
-            <h1 class="mb-0 bread">About us</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">หน้าหลัก</a></span> <span>เกี่ยวกับเรา</span></p>
+            <h1 class="mb-0 bread">เกี่ยวกับเรา</h1>
           </div>
         </div>
       </div>

@@ -43,7 +43,15 @@
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-							<span class="text">39 Moo 1 Pongpha 57130, Thailand</span>
+                    <?php
+                    if(!isset($_SESSION["username"])){
+                      echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
+                    } else {
+                      echo "<span class='text'>ชื่อผู้ใช้งาน : ".$_SESSION["username"]."</span>";
+                      echo "&nbsp;&nbsp;";
+                      echo "<a class='text' href='action/logout.php' >ออกจากระบบ</a>";
+                    }
+                  ?>
 					    </div>
 				    </div>
 			    </div>
@@ -59,17 +67,17 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">หน้าหลัก</a></li>
 	          <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="order.php">Order</a>
-                <a class="dropdown-item" href="checkout.php">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">ร้านค้า</a>
+                <a class="dropdown-item" href="order.php">รายการสั่งซื้อสินค้า</a>
+                <a class="dropdown-item" href="checkout.php">ชำระเงิน</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">เกี่ยวกับเรา</a></li>
+	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -77,38 +85,46 @@
 	  </nav>
     <!-- END nav -->
     <div class="container">
-  <h2>All product</h2>                                                                             
+  <h2>สินค้าที่สั่งซื้อ</h2>                                                                             
   <div class="table-responsive">          
   <table class="table">
     <thead>
       <tr>
-        <th>#No</th>
-        <th>Product name</th>
-        <th>Quantity</th>
+        <th>ลำดับ</th>
+        <th>สินค้า</th>
+        <th>จำนวน</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>1</th>
-        <td>Apple</td>
-        <td>20</td>
-      </tr>
-      <tr>
-        <th></th>
-        <td>ฺฺBanana</td>
-        <td>15</td>
-      </tr>
-      <tr>
-        <th></th>
-        <td>mongo</td>
+        <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
         <td>5</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0007.jpg);"></div></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
+        <td>2</td>
       </tr>
     </tbody>
       <tr>
         <th>449/15 ม.333 จ.สุโขทัย</th>
       </tr>
       <tr>
-        <td>Delivery By Admin name</td>
+        <td><?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text'>จัดส่งโดย : ผู้ดูแลระบบ</a>";
+								} else {
+									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+
+								}
+							?></td>
       </tr>
   </table>
   </div>

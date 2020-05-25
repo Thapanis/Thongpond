@@ -51,11 +51,11 @@
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
               <?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -74,7 +74,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.php" class="nav-link">Back to home</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">กลับไปหน้าหลัก</a></li>
           </ul>
         </div>
 	    </div>
@@ -109,26 +109,26 @@
 				</thead>
 				<tbody>
 				<tr>
-					<td></td>
+          <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
 					<td>01</td>
-					<td>Banana</td>
-					<td>Sweet</td>
-          <td>15</td>
-          <td>Friut</td>
-          <td>1</td>
-          <td><button type="button" class="btn btn-primary">EDIT</button></td>
-          <td><button type="button" class="btn btn-danger">Delete</button></td>
+					<td>ผงดอกอัญชันอบแห้ง 100%</td>
+					<td>น้ำหนัก 40 กรัม/ถุง</td>
+          <td>100</td>
+          <td>ของแห้ง</td>
+          <td>5</td>
+          <td><button type="button" class="btn btn-primary">แก้ไข</button></td>
+          <td><button type="button" class="btn btn-danger">ลบ</button></td>
 				</tr>
 				<tr>
-        <td></td>
+          <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
 					<td>02</td>
-					<td>Orange</td>
-					<td>Sweet$GoodHeath</td>
-          <td>15</td>
-          <td>Friut</td>
-          <td>20</td>
-          <td><button type="button" class="btn btn-primary">EDIT</button></td>
-          <td><button type="button" class="btn btn-danger">Delete</button></td>
+					<td>ผงพริกไทยดำ 100%</td>
+					<td>น้ำหนัก 40 กรัม/ถุง</td>
+          <td>100</td>
+          <td>ของแห้ง</td>
+          <td>10</td>
+          <td><button type="button" class="btn btn-primary">แก้ไข</button></td>
+          <td><button type="button" class="btn btn-danger">ลบ</button></td>
 				</tr>
 				</tbody>
 				</table>

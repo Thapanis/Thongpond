@@ -50,11 +50,11 @@
 					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
 							<?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -72,19 +72,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">หน้าหลัก</a></li>
 	          <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="order.php">Order</a>
-                <a class="dropdown-item active " href="checkout.php">Checkout</a>
+              	<a class="dropdown-item" href="shop.php">ร้านค้า</a>
+                <a class="dropdown-item" href="order.php">รายการสั่งซื้อ</a>
+                <a class="dropdown-item active " href="checkout.php">ชำระเงิน</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">เกี่ยวกับ</a></li>
 			  	<?php
 					if(isset($_SESSION["role"]) && $_SESSION["role"] == "A"){
-						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>Admin manage</a></li>";
+						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -99,8 +99,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Checkout</span></p>
-            <h1 class="mb-0 bread">Checkout</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">หน้าหลัก</a></span> <span>ชำระเงิน</span></p>
+            <h1 class="mb-0 bread">ชำระเงิน</h1>
           </div>
         </div>
       </div>
@@ -111,30 +111,28 @@
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
 						<form action="#" class="billing-form">
-							<h3 class="mb-4 billing-heading">Billing Details</h3>
+							<h3 class="mb-4 billing-heading">รายละเอียดการเรียกเก็บเงิน</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
+	                	<label for="firstname">ชื่อ</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="lastname">Last Name</label>
+	                	<label for="lastname">นามสกุล</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
 		            <div class="col-md-12">
 		            	<div class="form-group">
-		            		<label for="country">State / Country</label>
+		            		<label for="country">ประเทศ</label>
 		            		<div class="select-wrap">
 		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 		                  <select name="" id="" class="form-control">
 		                  	<option value="">Thailand</option>
-		                    <option value="">Philippines</option>
-		                    
 		                  </select>
 		                </div>
 		            	</div>
@@ -142,15 +140,15 @@
 		            <div class="w-100"></div>
 		            <div class="col-md-12">
 		            	<div class="form-group">
-	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
+	                	<label for="streetaddress">ที่อยู่</label>
+	                  <input type="text" class="form-control" placeholder="บ้านเลขที่ หมู่บ้าน จังหวัด">
 	                </div>
 		            </div>
 		            
 		            <div class="w-100"></div>
 		            <div class="col-md-12">
 		            	<div class="form-group">
-	                	<label for="towncity">City</label>
+	                	<label for="towncity">เมือง</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
@@ -158,7 +156,7 @@
 		            <div class="w-100"></div>
 		            <div class="col-md-12">
 	                <div class="form-group">
-	                	<label for="phone">Phone</label>
+	                	<label for="phone">หมายเลขโทรศัพท์</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
@@ -167,7 +165,7 @@
                 <div class="col-md-12">
                 	<div class="form-group mt-4">
 										<div class="radio">
-										  <label><input type="radio" name="optradio"> Ship to different address</label>
+										  <label><input type="radio" name="optradio"> เพิ่มที่อยู่ใหม่</label>
 										</div>
 									</div>
                 		</div>
@@ -177,15 +175,15 @@
 											<div class="radio">
 												<label><input type="radio" name="optradio"></label>
 												<tr>
-													<td align="right" valign="middle">Attach a money transfer slip :</td>
+													<td align="right" valign="middle">แนบสลิปโอนเงิน :</td>
 													<td colspan="2"><label for="p_img1"></label>
 													<input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
         										</tr>
 											</div>
 										</div>
 									</div>
-										<a href="display.php" class="btn btn-info" role="button">Success</a>
-										<button type="button" class="btn btn-danger">Clear</button>
+										<a href="display.php" class="btn btn-info" role="button">เสร็จสิ้น</a>
+										<button type="button" class="btn btn-danger">ยกเลิก</button>
 
 	          </form><!-- END -->
 					</div>
@@ -193,23 +191,23 @@
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Order Total</h3>
+	          			<h3 class="billing-heading mb-4">รายการสินค้าทั้งหมด</h3>
 	          			<p class="d-flex">
-		    						<span>Subtotal</span>
-		    						<span>$20.60</span>
+		    						<span>ยอดรวมสินค้า:</span>
+		    						<span>฿220</span>
 		    					</p>
 		    					<p class="d-flex">
-		    						<span>Delivery</span>
-		    						<span>$0.00</span>
+		    						<span>รวมการจัดส่ง:</span>
+		    						<span>฿0</span>
 		    					</p>
 		    					<p class="d-flex">
-		    						<span>Discount</span>
-		    						<span>$3.00</span>
+		    						<span>การชำระเงินทั้งหมด:</span>
+		    						<span>฿220</span>
 		    					</p>
 		    					<hr>
 		    					<p class="d-flex total-price">
-		    						<span>Total</span>
-		    						<span>$17.60</span>
+		    						<span>ทั้งหมด</span>
+		    						<span>฿220</span>
 		    					</p>
 								
 					</div>

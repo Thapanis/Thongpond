@@ -154,7 +154,7 @@
 				<tr>
 					<td>1</td>
 					<td>A</td>
-					<td>Goodd</td>
+					<td>Goodd<br/>kkkk</td>
 					<td><button type="button" class="btn btn-success">Buy</button></td>
 				</tr>
 				<tr>

@@ -134,7 +134,7 @@
 						        	<h3>Bell Pepper</h3>
 						        	</td>
 						        
-						        	<td class="price">$4.90</td>
+						        	<td class="price">$4</td>
 						        
 						        	<td class="quantity">
 						        	<div class="input-group mb-3">
@@ -142,7 +142,7 @@
 					    </div>
 					         		</td>
 						        
-						        <td class="total">$4.90</td>
+						        <td class="total">$4</td>
 						      </tr><!-- END TR-->
 
 						      <tr class="text-center">
@@ -155,7 +155,7 @@
 
 						        </td>
 						        
-						        <td class="price">$15.70</td>
+						        <td class="price">$15</td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
@@ -163,7 +163,7 @@
 					          	</div>
 					        </td>
 						        
-						        <td class="total">$15.70</td>
+						        <td class="total">$15</td>
 						      </tr><!-- END TR-->
 							
 						    	</tbody>

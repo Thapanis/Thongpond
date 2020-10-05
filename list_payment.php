@@ -53,9 +53,9 @@
 								if(!isset($_SESSION["username"])){
 									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a class='text' href='action/logout.php'>LOGOUT</a>";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
 							?>
 					    </div>
@@ -74,7 +74,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.php" class="nav-link">Back to home</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">กลับไปหน้าหลัก</a></li>
           </ul>
         </div>
 	    </div>
@@ -92,10 +92,11 @@
         <div class="col-md-10">
 
         <br>
-        <h3 align="left"> รายการสั่งซื้อใหม่ </h3>
+        <h3 align="center"> ตรวจสอบการชำระเงิน </h3>
         <table class="table">
           <thead>
               <tr>
+                <th>รหัสชำระเงิน</th>
                 <th>รหัสการสั่งซื้อ</th>
                 <th>ลูกค้า</th>
                 <th>จำนวนรายการ</th>
@@ -107,7 +108,8 @@
           </thead>
             <tbody>
                 <tr>
-                  <td>001</td>
+                  <td>33</td>
+                  <td>54</td>
                   <td>SADBOT</td>
                   <td>1</td>
                   <td>120</td>
@@ -116,7 +118,8 @@
                   <td>01/02/2020</td>
                 </tr>
                 <tr>
-                  <td>002</td>
+                  <td>33</td>
+                  <td>55</td>
                   <td>SADBOT</td>
                   <td>2</td>
                   <td>100</td>

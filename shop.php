@@ -76,7 +76,7 @@
 	          <li class="nav-item active dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ร้านค้า</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.php">ร้านค้า</a>
+              	<a class="dropdown-item active" href="shop.php">ร้านค้า</a>
                 <a class="dropdown-item" href="order.php">รายการสั่งซื้อ</a>
                 <a class="dropdown-item" href="checkout.php">ชำระเงิน</a>
               </div>
@@ -95,7 +95,7 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/shop-1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -132,7 +132,26 @@
 						</thead>
 						<tbody>
 						<tbody>
-							<tr>
+						<?php
+							$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
+							$result = $conn->query($sql);
+
+							if ($result->num_rows > 0) {
+								while($row = $result->fetch_assoc()) { 
+							echo "<tr> ";
+								echo "<td>". $row["quantity"] ."</td>";
+								echo "<td>". "" ."</td>";
+								echo "<th>". $row["product_detail"] ."</td>";
+								echo "<br>". $row["price"];
+								// echo "<td><button type='button' class='btn btn-success'>สั่งซื้อ</button></td>";
+								echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."' class='btn btn-success'>สั่งซื้อ</a></td>";
+							echo "</tr> ";
+							}
+						}
+
+							$conn->close();
+						?>
+							<!-- <tr>
 								<td>2</td>
 								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
 								<td>ผงดอกอัญชันอบแห้ง 100%<br/>฿100</td>
@@ -173,7 +192,7 @@
 								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0007.jpg);"></div></td>
 								<td>ผงฟ้าทะลายโจร 100%<br/>฿100</td>
 								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
+							</tr> -->
 
 						</tbody>
 						</table>
@@ -190,30 +209,6 @@
 						<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
 					</a>
 				</div>
-			</div>
-			<div class="row mb-5">
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-				<h2 class="ftco-heading-2">WorldGrow</h2>
-				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
-					provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-					<li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<h2 class="ftco-heading-2">Contact us</h2>
-					<div class="block-23 mb-3">
-					<ul>
-						<li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-						<li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
-						<li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
-					</ul>
-					</div>
-				</div>
-			</div>
 			</div>
       	</div>
     </footer>

@@ -14,6 +14,7 @@
 			while($row = mysqli_fetch_array($result)){
 				$_SESSION["username"] = $row['member_name'];
 				$_SESSION["role"] = $row['member_role'];
+				$_SESSION["userId"] = $row['member_id'];
 			}
 
 			header("Location: ./../index.php");

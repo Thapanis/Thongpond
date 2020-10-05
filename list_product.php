@@ -92,7 +92,7 @@
         <div class="col-md-10">
 
         <br>
-        <h3 align="left"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> + เพิ่มสินค้า </a> </h3>
+        <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> + เพิ่มสินค้า </a> </h3>
         <table class="table">
 				<thead>
 				<tr>
@@ -104,10 +104,34 @@
           <th>ประเภทสินค้า</th>
           <th>จำนวนสินค้า</th>
           <th>แก้ไข</th>
-          <th>Delete</th>
+          <th>ลบ</th>
 				</tr>
 				</thead>
 				<tbody>
+        <tr>
+                <?php
+                  $sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) { 
+                      echo "<tr> ";
+                        echo "<td>". "" ."</td>";
+                        echo "<td>". $row["product_id"] ."</td>";
+                        echo "<td>". $row["product_name"] ."</td>";
+                        echo "<td>". $row["product_detail"] ."</td>";
+                        echo "<td>". $row["price"] ."</td>";
+                        echo "<td>". $row["producttype_id"] ."</td>";
+                        echo "<td>". $row["quantity"] ."</td>";
+                        echo "<td><button type='button' class='btn btn-primary'>แก้ไข</button></td>";
+                        echo "<td><button type='button' class='btn btn-danger'>ลบ</button></td>";
+                      echo "</tr> ";
+                    }
+                  }
+
+                  $conn->close();
+                  ?>
+        </tr>
 				<tr>
           <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
 					<td>01</td>

@@ -92,21 +92,20 @@
         <div class="col-md-10">
 
         <br>
-        <h3 align="left"> การจัดการข้อมูล Member  <a href="add_member.php" class="btn btn-primary"> + เพิ่มข้อมูลสมาชิก </a></h3>
+        <h3 align="center"> จัดการข้อมูล สมาชิก  <a href="add_member.php" class="btn btn-primary"> + เพิ่มข้อมูลสาชิก </a></h3>
         <table class="table">
           <thead>
               <tr>
-                <th>member_id</th>
-                <th>member_name</th>
-                <th>member_lname</th>
-                <th>member_address</th>
-                <th>Telephone number</th>
-                <th>Password</th>
-                <th>Delete</th>
+                <th>รหัสสมาชิก</th>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>ที่อยู่</th>
+                <th>เบอร์โทรศัพท์</th>
+                <th>ลบ</th>
               </tr>
           </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                   <td>01</td>
                   <td>Thapanis</td>
                   <td>Thondpond</td>
@@ -123,8 +122,27 @@
                   <td>0805145713</td>
                   <td>1234</td>
                   <td><button type="button" class="btn btn-danger">ลบ</button></td>
-                </tr>
-              </tbody>
+                </tr> -->
+                <?php
+                  $sql = "SELECT member_name, member_id, member_fname, member_lname, address, phone, member_role FROM member ";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) { 
+                      echo "<tr> ";
+                        echo "<td>". $row["member_id"] ."</td>";
+                        echo "<td>". $row["member_fname"] ."</td>";
+                        echo "<td>". $row["member_lname"] ."</td>";
+                        echo "<td>". $row["address"] ."</td>";
+                        echo "<td>". $row["phone"] ."</td>";
+                        echo "<td><button type='button' class='btn btn-danger'>ลบ</button></td>";
+                      echo "</tr> ";
+                    }
+                  }
+
+                  $conn->close();
+                ?>
+            </tbody>
 				</table>
 
         </div>

@@ -32,8 +32,10 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <body class="goto-here">
-    <div class="py-1 bg-primary">
+  </head>
+
+  <body class="goto-here">
+  <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -49,9 +51,9 @@
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
               <?php
 								if(!isset($_SESSION["username"])){
-									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
+									echo "<a class='text' href='/worldgrow/login/login.php'>LOGIN</a>";
 								} else {
-									echo "<span class='text'>ขื่อผู้ใช้งาน : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
 									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
 								}
@@ -62,28 +64,40 @@
 		    </div>
 		  </div>
     </div>
-	<!--?php include('h.php');?-->
-    <!--?php include('datatable.php');?-->
-  </head>
-  <body>
-  <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-  	<div class="row">
-    	<div class="col-md-2">
-        <?php include('menu.php');?>        	 
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" style="align=center" href="index.php">Worldgrow Organic Farm</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.php" class="nav-link">กลับไปหน้าหลัก</a></li>
+          </ul>
+        </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <div class="container">
+      <div class="row">
+        <?php include('banner.php');?>
       </div>
+      <div class="row">
+        <div class="col-md-2">
+          <?php include('menu.php');?>        	 
+        </div>
+        <div class="col-md-10">
 
-
-      <div class="col-md-10">
-        <h3 align="center"> ชำระเงินเรียบร้อยแล้ว </h3>
+        <br>
+        <h3 align="center"> รายการสั่งซื้อ </h3>
         <table class="table">
           <thead>
               <tr>
-                <th>รหัสการสั่งซื้อ</th>
-                <th>ลูกค้า</th>
-                <th>จำนวนรายการ</th>
+                <th>สมชิก</th>
+                <th>เลขที่สั่งซื้อ</th>
                 <th>ราคารวม</th>
                 <th>สถานะ</th>
                 <th>รูปหลักฐานการโอน</th>
@@ -92,20 +106,21 @@
           </thead>
             <tbody>
                 <tr>
-                  <td>002</td>
-                  <td>SADBOT</td>
-                  <td>2</td>
-                  <td>100</td>
-                  <td>ชำระเงินแล้ว</td>
+                  <td>admin</td>
+                  <td>53</td>
+                  <td>120</td>
+                  <td>รอชำระเงิน</td>
                   <td></td>
-                  <td>20/02/2020</td>
+                  <td>01/02/2020</td>
                 </tr>
               </tbody>
 				</table>
+
+        </div>
       </div>
     </div>
- </div>
 
+    <br/><br/><br/>
  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

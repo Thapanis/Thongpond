@@ -1,3 +1,8 @@
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +34,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
-		<div class="py-1 bg-primary">
+  <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -38,25 +43,25 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">088 623 9445</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    <div class="col-md pr-5 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                    <?php
-                    if(!isset($_SESSION["username"])){
-                      echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
-                    } else {
-                      echo "<span class='text'>ชื่อผู้ใช้งาน : ".$_SESSION["username"]."</span>";
-                      echo "&nbsp;&nbsp;";
-                      echo "<a class='text' href='action/logout.php' >ออกจากระบบ</a>";
-                    }
-                  ?>
+					    <div class="col-md-3 pr-1 d-flex topper align-items-center text-lg-right">
+							<?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
+								} else {
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
-		  </div>
+		</div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -85,8 +90,8 @@
 	  </nav>
     <!-- END nav -->
     <div class="container">
-  <h2>สินค้าที่สั่งซื้อ</h2>                                                                             
-  <div class="table-responsive">          
+    <h1><p style="text-align:center;">ติดต่อสอบถาม</p></h1>                                                                           
+      <div class="table-responsive">          
   <table class="table">
     <thead>
       <tr>
@@ -116,43 +121,40 @@
         <th>449/15 ม.333 จ.สุโขทัย</th>
       </tr>
       <tr>
-        <td><?php
+        <td>
+          <?php
 								if(!isset($_SESSION["username"])){
 									echo "<a class='text'>จัดส่งโดย : ผู้ดูแลระบบ</a>";
 								} else {
-									echo "<span class='text'>USERNAME : ".$_SESSION["username"]."</span>";
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
 									echo "&nbsp;&nbsp;";
 
 								}
-							?></td>
+					?>
+        </td>
       </tr>
   </table>
   </div>
 </div>
 	
-            <footer class="ftco-footer ftco-section">
+  <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
-      		
       	</div>
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Contact product by</h2>
-              <p>0822485557</p>
-              <a href="index.php" class="btn btn-info" role="button">OK</a>
+              <h5><p style="text-align:center;">ติดต่อสอบถาม</p></h5>
+              <h5><p style="text-align:center;">0822485557</p></h5>
+              <a href="index.php" style="text-align:center" class="btn btn-info" role="button">ตกลง</a>
 
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
               </ul>
             </div>
           </div>
-          
-		  
-		  
-          
-      </div>
-    </footer>
+        </div>
+  </footer>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 

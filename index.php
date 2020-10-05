@@ -63,6 +63,8 @@
 		    </div>
 		</div>
     </div>
+
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.php">Worldgrow Organic Farm</a>
@@ -96,8 +98,9 @@
     <!-- END nav -->
 
     <section id="home-section" class="hero">
-		  <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
+		  
+		<div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(images/bg-1.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -112,21 +115,21 @@
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image: url(images/bg_2.jpg);">
+		  <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(images/bg-2.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
-	            <div class="col-sm-12 ftco-animate text-center">
-	              <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+	            <div class="col-md-12 ftco-animate text-center">
+	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
 	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-	              <p><a href="#" class="btn btn-primary">รายละเอียด</a></p>
+	              <p><a href="about.php" class="btn btn-primary">รายละเอียด</a></p>
 	            </div>
 
 	          </div>
 	        </div>
 	      </div>
-	    </div>
     </section>
 
     
@@ -146,11 +149,29 @@
 				<tr>
 					<th>จำนวน</th>
 					<th>สินค้า</th>
-					<th>รายละเอียด<br/>ราคา</th>
+					<th>รายละเอียดสินค้า<br/>ราคา</th>
 					<th></th>
 				</tr>
 				</thead>
 				<tbody>
+					<?php
+					$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
+					$result = $conn->query($sql);
+
+					if ($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()) { 
+						echo "<tr> ";
+							echo "<td>". $row["quantity"] ."</td>";
+							echo "<td>". "" ."</td>";
+							echo "<th>". $row["product_detail"] ."</td>";
+							echo "<br>". $row["price"];
+							echo "<td><button type='button' class='btn btn-success'>สั่งซื้อ</button></td>";
+						echo "</tr> ";
+						}
+					}
+
+					$conn->close();
+					?>
 				<tr>
 					<td>2</td>
 					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
@@ -201,30 +222,6 @@
 						<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
 					</a>
 				</div>
-			</div>
-			<div class="row mb-5">
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-				<h2 class="ftco-heading-2">WorldGrow</h2>
-				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
-					provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-					<li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<h2 class="ftco-heading-2">ติดต่อเรา</h2>
-					<div class="block-23 mb-3">
-					<ul>
-						<li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-						<li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
-						<li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
-					</ul>
-					</div>
-				</div>
-			</div>
 			</div>
       	</div>
     </footer>

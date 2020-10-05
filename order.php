@@ -95,16 +95,7 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">หน้าหลัก</a></span> <span>Order</span></p>
-            <h1 class="mb-0 bread"></h1>รายการสินค้าของฉัน</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="hero-wrap hero-bread" style="background-image: url('images/shop-2.jpg');"></div>
 
     <section class="ftco-section ftco-cart">
 			<div class="container">
@@ -168,7 +159,7 @@
 							
 						    	</tbody>
 							</table>
-						  <p><a href="checkout.php" class="btn btn-primary py-50 px-60">สั่งสินค้า</a></p>
+						  <p><a href="checkout.php" class="btn btn-success py-50 px-60">สั่งสินค้า</a></p>
 					  </div>
     			</div>
     		</div>
@@ -234,44 +225,6 @@
 			</div>
 		</section-->
 
-		
-	<footer class="ftco-footer ftco-section">
-      	<div class="container">
-			<div class="row">
-				<div class="mouse">
-					<a href="#" class="mouse-icon">
-						<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-					</a>
-				</div>
-			</div>
-			<div class="row mb-5">
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-				<h2 class="ftco-heading-2">WorldGrow</h2>
-				<p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
-					provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-					<li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-md">
-				<div class="ftco-footer-widget mb-4">
-					<h2 class="ftco-heading-2">Contact us</h2>
-					<div class="block-23 mb-3">
-					<ul>
-						<li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-						<li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
-						<li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
-					</ul>
-					</div>
-				</div>
-			</div>
-			</div>
-      	</div>
-    </footer>
-    
-  
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

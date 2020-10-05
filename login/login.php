@@ -29,7 +29,7 @@
 		<br/>
 		<div class="input-group" style="display: flex;">
 			<b style="font-size: 20px;">
-				ยังไม่ได้เป็นสมาชิก &nbsp; <a href="register.php" class="btn">สมัครใหม่</a>
+				ยังไม่ได้เป็นสมาชิก &nbsp; <a href="register.php" class="btn">สมัครสมาชิกใหม่</a>
 			</b>
 		</div>
 

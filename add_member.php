@@ -1,4 +1,8 @@
-<!--?php include('access.php');?-->
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,20 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
@@ -28,9 +25,9 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <body class="goto-here">
-		<div class="py-1 bg-primary">
+
+		<body class="goto-here">
+  <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -44,15 +41,36 @@
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">login</span>
+              <?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
+								} else {
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
 		  </div>
     </div>
+
 	<!--?php include('h.php');?-->
     <!--?php include('datatable.php');?-->
+
+    <script type="text/javascript">
+      function checkmyform(){
+        if(document.getElementById("admin_pass").value != document.getElementById("admin_conpass").value){
+          alert("Password not match.");
+          return false;
+        }
+
+        document.getElementById("register").submit();
+      }
+    </script>
+    
   </head>
   <body>
   <div class="container">
@@ -64,9 +82,9 @@
         <?php include('menu.php');?>        	 
       </div>
         <div class="col-md-100">
-        <h3 align="left">  เพิ่ม  Member </h3>
+        <h3 align="center">  เพิ่ม สมาชิก </h3>
    
-    <form  name="register" action="add_admin_db.php" method="POST" id="register" class="form-horizontal">
+    <form  name="register" action="action/add_user.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
        <div class="col-sm-100">  </div>
        <div class="col-sm-100" align="center">
@@ -74,44 +92,59 @@
        </div>
        </div>
        <div class="form-group">
-            <div class="col-sm-100" align="left"> first name : </div>
+            <div class="col-sm-100" align="left"> ชื่อ : </div>
             <div class="col-sm-100" align="left">
-            <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="fname" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
+            <input  name="admin_firstname" type="text" required class="form-control" id="admin_firstname" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
             </div>
         </div>
         
         <div class="form-group">
-        <div class="col-sm-100" align="left"> last name : </div>
+        <div class="col-sm-100" align="left"> นามสกุล : </div>
           <div class="col-sm-100" align="left">
-            <input  name="admin_pass" type="text" required class="form-control" id="admin_pass" placeholder="lname" pattern="^[a-zA-Z0-9]+$" minlength="2" />
+            <input  name="admin_lastname" type="text" required class="form-control" id="admin_lastname" pattern="^[a-zA-Z0-9]+$" minlength="2" />
           </div>
         </div>
         <div class="form-group">
-        <div class="col-sm-100" align="left"> Address : </div>
+        <div class="col-sm-100" align="left"> ที่อยู่ : </div>
           <div class="col-sm-100" align="center">
-            <input  name="admin_name" type="text" required class="form-control" id="admin_name" placeholder="address" />
+            <input  name="admin_addr" type="text" required class="form-control" id="admin_addr" />
           </div>
         </div>
 
         <div class="form-group">
-            <div class="col-sm-100" align="left"> Tel. : </div>
+            <div class="col-sm-100" align="left"> เบอร์โทรศัพท์ : </div>
             <div class="col-sm-100" align="left">
-            <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
+            <input  name="admin_tel" type="text" required class="form-control" id="admin_tel" placeholder="" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-sm-100" align="left"> Username : </div>
+            <div class="col-sm-100" align="left"> ชื่อผู้ใช้งาน : </div>
             <div class="col-sm-100" align="left">
-            <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
+            <input  name="admin_user" type="text" required class="form-control" id="admin_user" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="col-sm-100" align="left"> รหัสผ่าน : </div>
+            <div class="col-sm-100" align="left">
+            <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-100" align="left"> ยืนยันรหัสผ่าน : </div>
+            <div class="col-sm-100" align="left">
+            <input  name="admin_conpass" type="password" required class="form-control" id="admin_conpass" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
+            </div>
+        </div>
+
+        <input  name="admin_role" type="hidden" id="admin_role" value="A" />
     
       <div class="form-group">
       <div class="col-sm-2"> </div>
           <div class="col-sm-6">
-          <button type="submit" class="btn btn-primary" id="btn"> บันทึก</button>
+          <button type="button" class="btn btn-primary" id="btn" onclick="checkmyform();"> บันทึก</button>
           </div>
            
       </div>

@@ -1,3 +1,8 @@
+<?php
+	include 'connectdb.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
@@ -28,7 +32,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <body class="goto-here">
-		<div class="py-1 bg-primary">
+  <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -42,13 +46,36 @@
 						    <span class="text">worldgrowthailand@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">login</span>
+                                                        <?php
+								if(!isset($_SESSION["username"])){
+									echo "<a class='text' href='/worldgrow/login/login.php'>เข้าสู่ระบบ</a>";
+								} else {
+									echo "<span class='text'>ผู้ใช้งาน : ".$_SESSION["username"]."</span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a class='text' href='action/logout.php'>ออกจากระบบ</a>";
+								}
+							?>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
-		  </div>
+		</div>
     </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" style="align=center" href="index.php">Worldgrow Organic Farm</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.php" class="nav-link">กลับไปหน้าหลัก</a></li>
+          </ul>
+        </div>
+	    </div>
+	  </nav>
 	<!--?php include('h.php');?-->
     <!--?php include('datatable.php');?-->
   </head>
@@ -63,8 +90,7 @@
     </div>
         <div class="col-md-50">
         <h3 align="center">  เพิ่ม ข้อมูลสินค้าใหม่</h3>
-   
-    <form  name="register" action="add_admin_db.php" method="POST" id="register">
+
        <div class="form-group">
             <div class="col-sm-50"></div>
        <div class="col-sm-100" align="center">
@@ -72,15 +98,15 @@
        </div>
        </div>
 
-       
-        <form action="add_product_db.php"  method="post" enctype="multipart/form-data" name="" id="">
-            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+       <form action="action/add_product_db.php"  method="post" enctype="multipart/form-data" name="add_product" id="add_product">
+            
+       <table width="600" border="1" align="center" cellpadding="0" cellspacing="0">
         <tr>
-                <td colspan="3" align="center">&nbsp;</td>
+                <td colspan="1000" align="center">&nbsp;</td>
         </tr>
         <tr>
-                <td width="129" align="center" valign="top">ชื่อสินค้า :</td>
-                <td colspan="10"><label for="product_name"></label>
+                <td width="120" align="center">ชื่อสินค้า :</td>
+                <td colspan="2"><label for="product_name"></label>
                 <input name="product_name" type="text" required id="product_name" size="50"/></td>
         </tr>
         <tr>
@@ -88,9 +114,9 @@
                 <td colspan="2">&nbsp;</td> <!-- space -->
          </tr>
          <tr>
-                <td width="120" align="center" >รายละเอียดสินค้า :</td>
-                <td colspan="10">
-                <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
+                <td width="120" align="center" >รายละเอียดสินค้า:</td>
+                <td colspan="50">
+                <textarea name="product_detail" id="product_detail" class="ckeditor" cols="80" rows="5"></textarea>
                 </td>
         </tr>
 
@@ -99,9 +125,9 @@
                 <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-                <td align="right" valign="middle" >ราคาขาย :</td>
-                <td width="190"><label for="product_price"></label>
-                <input type="number" name="product_price" id="product_price" required/></td>
+                <td align="right" valign="middle" >ราคาขาย:</td>
+                <td width="190"><label for="price"></label>
+                <input type="number" name="price" id="price" required/></td>
                 <td width="500">&nbsp; </td>
         </tr>
         <tr>
@@ -112,13 +138,13 @@
                 <td align="right" valign="middle">ประเภทสินค้า :</td>
                 <td colspan="2">
                 <label for=""></label>
-                <select name="t_id" id="t_id" required="required">
+                <select name="producttype_id" id="producttype_id" required="required">
                 <option value="">กรุณาเลือกประเภท</option>
-                <option value="ผัก">vegetable</option>
-                <option value="ผลไม้">Fruits</option>
-                <option value="น้ำผลไม้">Juice</option>
-                <option value="ของแห้ง">Dried</option>
-                <option value="สะอาด">Organic</option>
+                <option value="1">ผัก</option>
+                <option value="2">ผลไม้</option>
+                <option value="3">น้ำผลไม้</option>
+                <option value="4">ของแห้ง</option>
+                <option value="5">สะอาด</option>
                 </select>
                 </td>
         </tr>
@@ -127,9 +153,9 @@
                 <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-                <td align="right" valign="middle" >จำนวน :</td>
-                <td width="190"><label for="product_price"></label>
-                <input type="number" name="product_price" id="product_price" required/></td>
+                <td align="center" valign="middle" >จำนวน:</td>
+                <td width="190"><label for="quantity"></label>
+                <input type="number" name="quantity" id="quantity" required/></td>
                 <td width="500">&nbsp; </td>
         </tr>
         <tr>
@@ -137,9 +163,9 @@
                 <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-                <td align="right" valign="middle">รูปภาพสินค้า1 :</td>
-                <td colspan="2"><label for="p_img1"></label>
-                <input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
+                <td align="right" valign="middle">รูปภาพสินค้า:</td>
+                <td colspan="2"><label for="product_img"></label>
+                <input name="product_img" type="file" required class="bg-warning" id="product_img" size="40" /></td>
         </tr>
         <tr>
                 <td>&nbsp;</td>

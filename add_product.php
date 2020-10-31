@@ -153,10 +153,9 @@
                 <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-                <td align="center" valign="middle" >จำนวน:</td>
+                <td align="right" valign="middle" >จำนวน:</td>
                 <td width="190"><label for="quantity"></label>
                 <input type="number" name="quantity" id="quantity" required/></td>
-                <td width="500">&nbsp; </td>
         </tr>
         <tr>
                 <td align="right" valign="middle">&nbsp;</td>

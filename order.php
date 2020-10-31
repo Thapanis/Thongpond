@@ -87,7 +87,17 @@
 						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
-	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+
+				<?php
+					$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o
+					JOIN product p ON p.product_id = o.product_id ";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[". $result->num_rows ."]</a></li>";
+					} else {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[0]</a></li>";
+					}
+				?>
 
 	        </ul>
 	      </div>
@@ -107,14 +117,36 @@
 						      	<tr class="text-center">
 						       		<th>&nbsp;</th>
 									<th>No</th>
-						       		<th>&nbsp;</th>
+						       		<th>&nbsp;</th> 
 									<th>ชื่อสินค้า</th>
 									<th>ราคาต่อชิ้น</th>
 									<th>จำนวน</th>
 									<th>ราคารวม</th>
+									<th></th>
 						      	</tr>
 						    	</thead>
 						    	<tbody>
+								<?php
+									$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o JOIN product p ON p.product_id = o.product_id ";
+									 
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+										echo "<td> <a href='action/del_order.php?id='" . $row["order_id"] . "' class='btn btn-danger'>ลบ</a></td>";
+										echo "<td id ='orderId'>". $row["order_id"] ."</td>";
+										echo "<td>  </td>";
+										echo "<td>". $row["product_name"] ."</td>";
+										echo "<td>". $row["price"] ." </td>";
+										echo "<td><input type='number' id='qu_".$row["order_id"]."' value='" . $row["quantity"] ."' min='0' /></td>";
+										echo "<td>". $row["totalprice"] ."</td>";
+										echo "<td><a data-id='". $row["order_id"] ."' data-quantity='" . $row["quantity"] ."' href='action/add_order.php?id=". $row["order_id"] .""."&quantity=". $row["quantity"] ."' class='btn btn-outline-success buttonClick'>บันทึก</td>";
+										echo "</tr> ";
+									}
+								}
+
+									$conn->close();
+								?>
 									<tr class="text-center">
 									<td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 									<td>1</td>
@@ -130,11 +162,11 @@
 						        	<td class="quantity">
 						        	<div class="input-group mb-3">
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					    </div>
+
 					         		</td>
 						        
-						        <td class="total">฿100</td>
-						      </tr><!-- END TR-->
+						        	<td class="total">฿100</td>
+						      		</tr><!-- END TR-->
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -159,7 +191,7 @@
 							
 						    	</tbody>
 							</table>
-						  <p><a href="checkout.php" class="btn btn-success py-50 px-60">สั่งสินค้า</a></p>
+						  <p><center><a href="checkout.php" class="btn btn-success py-50 px-60">สั่งสินค้า</center></a></p>
 					  </div>
     			</div>
     		</div>
@@ -266,6 +298,7 @@
 		            // Increment
 		        
 		    });
+			
 
 		     $('.quantity-left-minus').click(function(e){
 		        // Stop acting like a button
@@ -280,6 +313,13 @@
 		            $('#quantity').val(quantity - 1);
 		            }
 		    });
+			$('.buttonClick').click(function(e){
+				var orderId = $(this).attr('data-id');
+				var quantity = parseInt($('#qu_'+orderId).val());
+				$('.buttonClick').attr('href','action/update_order.php?id='+orderId+'&quantity='+quantity);
+		        //return window.location.href = 'action/add_order.php?id='+orderId+'&quantity='+quantity;
+		    });
+			
 		    
 		});
 	</script>

@@ -87,7 +87,16 @@
 						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <?php
+					$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o
+					JOIN product p ON p.product_id = o.product_id ";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[". $result->num_rows ."]</a></li>";
+					} else {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[0]</a></li>";
+					}
+				?>
 
 	        </ul>
 	      </div>

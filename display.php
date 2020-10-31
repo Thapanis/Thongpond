@@ -82,7 +82,16 @@
               </div>
             </li>
 	          <li class="nav-item"><a href="about.php" class="nav-link">เกี่ยวกับเรา</a></li>
-	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+                <?php
+                  $sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o
+                  JOIN product p ON p.product_id = o.product_id ";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                    echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[". $result->num_rows ."]</a></li>";
+                  } else {
+                    echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[0]</a></li>";
+                  }
+                ?>
 
 	        </ul>
 	      </div>
@@ -145,12 +154,12 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h5><p style="text-align:center;">ติดต่อสอบถาม</p></h5>
-              <h5><p style="text-align:center;">0822485557</p></h5>
-              <a href="index.php" style="text-align:center" class="btn btn-info" role="button">ตกลง</a>
+              <h5><p style="text-align:center;">0822485557 </h5>
+              <h4><center><a href="index.php" style="text-align:center" class="btn btn-info" role="button">ตกลง</center></a></p><h4>
+              
 
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-              </ul>
+              
+              <h4 class="ftco-animate"><center><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></center></a></h4>
             </div>
           </div>
         </div>

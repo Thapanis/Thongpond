@@ -67,7 +67,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.php">Worldgrow Organic Farm</a>
+	      <a class="navbar-brand" href="index.php">Worldgroww Organic Farm</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -137,9 +137,9 @@
     <section class="ftco-section">
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <span class="subheading">สินค้าของเรา</span>
-          </div>
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">สินค้าของเรา</span>
+				</div>
         </div>   		
     	</div>
 		<div class="container">

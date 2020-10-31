@@ -87,7 +87,16 @@
 						echo "<li class='nav-item'><a href='admin.php' class='nav-link'>ผู้ดูแลระบบ</a></li>";
 					}
 				?>
-	          <li class="nav-item cta cta-colored"><a href="order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <?php
+					$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o
+					JOIN product p ON p.product_id = o.product_id ";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[". $result->num_rows ."]</a></li>";
+					} else {
+						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[0]</a></li>";
+					}
+				?>
 
 	        </ul>
 	      </div>
@@ -109,6 +118,9 @@
     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center">
+					<div class="col-md-12 heading-section text-center ftco-animate">
+            		<span class="subheading">สินค้าของเรา</span>
+          			</div>
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="#" class="active">ทั้งหมด</a></li>
@@ -143,8 +155,7 @@
 								echo "<td>". "" ."</td>";
 								echo "<th>". $row["product_detail"] ."</td>";
 								echo "<br>". $row["price"];
-								// echo "<td><button type='button' class='btn btn-success'>สั่งซื้อ</button></td>";
-								echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."' class='btn btn-success'>สั่งซื้อ</a></td>";
+								echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."&product=". $row["product_id"] ."' class='btn btn-success'>สั่งซื้อ</td>";
 							echo "</tr> ";
 							}
 						}

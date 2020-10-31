@@ -18,16 +18,4 @@
 
     $conn->close();
 
-    if($result){
-        echo "<script>";
-        echo "alert('เพิ่มสินค้าเรียบร้อยแล้ว');";
-        echo "window.location ='list_product.php'; ";
-        echo "</script>";
-    } else {
-        
-        echo "<script>";
-        echo "alert('ERROR!');";
-        echo "window.location ='list_product.php'; ";
-        echo "</script>";
-    }
 ?>

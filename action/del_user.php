@@ -1,13 +1,13 @@
 <?php
 	include '../connectdb.php';
 
-	$order_id = $_REQUEST['id'];
+	$member_id = $_REQUEST['id'];
 
-	$sql ="DELETE FROM `order` WHERE order_id = '$order_id' ";
+	$sql ="DELETE FROM member WHERE member_id = '$member_id' ";
 		
 	if ($conn->query($sql) === TRUE) {
 		// echo "Record deleted successfully";
-		header("Location: ../order.php");
+		header("Location: ../list_user.php");
 	} else {
 		echo "Error deleting record: " . $conn->error;
 	}

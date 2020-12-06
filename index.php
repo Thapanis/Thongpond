@@ -154,60 +154,23 @@
 				</tr>
 				</thead>
 				<tbody>
-					<?php
-					$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
-					$result = $conn->query($sql);
-
-					if ($result->num_rows > 0) {
-						while($row = $result->fetch_assoc()) { 
-						echo "<tr> ";
-							echo "<td>". $row["quantity"] ."</td>";
-							echo "<td>". "" ."</td>";
-							echo "<th>". $row["product_detail"] ."</td>";
-							echo "<br>". $row["price"];
-							echo "<td><button type='button' class='btn btn-success'>สั่งซื้อ</button></td>";
-						echo "</tr> ";
-						}
-					}
-
-					$conn->close();
-					?>
-				<tr>
-					<td>2</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
-					<td>ผงดอกอัญชันอบแห้ง 100%<br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
-					<td>ผงพริกไทยดำ 100%<br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0003.jpg);"></div></td>
-					<td>ผงขมิ้นเหลือง 100%<br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0004.jpg);"></div></td>
-					<td>ผงบะระเพ็ด 100%<br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0005.jpg);"></div></td>
-					<td>ผงไพล 100% <br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0006.jpg);"></div></td>
-					<td>ผงขิง 100%<br/>น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-					<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-				</tr>
+                <?php
+                  	$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity, pic FROM product ";
+				  	$result = $conn->query($sql);
+				  
+				  	if ($result->num_rows > 0) {
+                    	while($row = $result->fetch_assoc()) {
+							echo "<tr> ";
+								echo "<td>".$row['quantity']."</td>";
+								echo "<td><img height='100' width='100' src='images/".$row['pic']."' alt='' /></td>";
+								echo "<th>".$row['product_detail']."<br/>฿".$row['price']."</th>";
+								if(isset($_SESSION["userId"])){
+									echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."&product=". $row["product_id"] ."' class='btn btn-success'>สั่งซื้อ</td>";
+								}
+							echo "</tr> ";
+						} 
+					} 
+				?>
 				</tbody>
 				</table>
 			</div>

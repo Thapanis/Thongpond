@@ -103,12 +103,32 @@
               </tr>
           </thead>
           <tbody>
-                <tr>
-                  <td>20/02/2020</td>
-                  <td>SADBOT</td>
-                  <td>0001</td>
-                  <td>4000</td>
-                </tr>
+          <?php
+									$sql = "SELECT o.order_id, o.quantity, o.totalprice, m.member_name  FROM `order` o JOIN member m ON m.member_id = o.member_id ";
+									
+									$totalPriceForPayment = 0;
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<tr> ";
+                      echo "<td>  ";
+                      echo "<td>". $row["member_name"] ."</td>";
+                      echo "<td>". $row["order_id"] ."</td>";
+                      echo "<td>". $row["totalprice"] ."</td>";
+                      echo "</tr> ";
+                    
+                      $totalPriceForPayment += $row["totalprice"];
+                    }
+                      echo "<tr> ";
+										  echo "<td></td>";
+										  echo "<td></td>";
+										  echo "<td>ราคารวม</td>";
+										  echo "<td>".$totalPriceForPayment."</td>";
+										  echo "</tr> ";
+									}
+									$conn->close();
+						?>
           </tbody>
 				</table>
 

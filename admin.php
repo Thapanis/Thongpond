@@ -100,43 +100,6 @@
     </div>
 
     <br/><br/><br/>
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="mouse">
-            <a href="#" class="mouse-icon">
-              <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-            </a>
-          </div>
-        </div>
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">WorldGrow</h2>
-            <p> Consumers can be confident that all products from our farm are fresh, safe, clean, and chemical free. It is our mission to 
-              provide the healthiest organic foods to our customers, while keeping the environment safe and clean.</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li class="ftco-animate"><a href="https://www.facebook.com/WGorganicfarm/"><span class="icon-facebook"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Contact us</h2>
-            <div class="block-23 mb-3">
-            <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">39 Moo 1 Pongpha 57130, Thailand</span></li>
-              <li><span class="icon icon-phone"></span><span class="text">088 623 9445</span></li>
-              <li><span class="icon icon-envelope"></span><span class="text">worldgrowthailand@gmail.com , worldgrow@hotmail.co.th</span></li>
-            </ul>
-            </div>
-          </div>
-        </div>
-			</div>
-    </div>
-    </footer>
-
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

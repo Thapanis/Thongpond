@@ -105,151 +105,118 @@
     <!-- END nav -->
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/shop-3.jpg');"></div>
-
+	<section class="ftco-section">
+		<div class="container">
+		
+		</div>
+	</section>
+							
+		
     <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-7 ftco-animate">
-						<form action="#" class="billing-form">
-							<h3 class="mb-4 billing-heading">รายละเอียดการเรียกเก็บเงิน</h3>
-	          	<div class="row align-items-end">
-	          		<div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="firstname">ชื่อ</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="lastname">นามสกุล</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-                </div>
-                <div class="w-100"></div>
-		            <div class="col-md-12">
-		            	<div class="form-group">
-		            		<label for="country">ประเทศ</label>
-		            		<div class="select-wrap">
-		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                  <select name="" id="" class="form-control">
-		                  	<option value="">Thailand</option>
-		                  </select>
-		                </div>
-		            	</div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-12">
-		            	<div class="form-group">
-	                	<label for="streetaddress">ที่อยู่</label>
-	                  <input type="text" class="form-control" placeholder="บ้านเลขที่ หมู่บ้าน จังหวัด">
-	                </div>
-		            </div>
-		            
-		            <div class="w-100"></div>
-		            <div class="col-md-12">
-		            	<div class="form-group">
-	                	<label for="towncity">เมือง</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-		            </div>
-		            
-		            <div class="w-100"></div>
-		            <div class="col-md-12">
-	                <div class="form-group">
-	                	<label for="phone">หมายเลขโทรศัพท์</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-	              </div>
-	              
-                <div class="w-100"></div>
-                <div class="col-md-12">
-                	<div class="form-group mt-4">
-										<div class="radio">
-										  <label><input type="radio" name="optradio"> เพิ่มที่อยู่ใหม่</label>
-										</div>
-									</div>
-                		</div>
-	            </div>
+      	<div class="container">
+        	<div class="row justify-content-center">
+          		<div class="col-xl-7 ftco-animate">
+					<form action="#" class="billing-form">
+						<h3 class="mb-4 billing-heading">รายละเอียดการเรียกเก็บเงิน</h3>
+						<?php
+							$sql = "SELECT member_id, member_fname, member_lname, address, phone FROM member WHERE member_name = '".$_SESSION["username"]."' ";			
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								while($row = $result->fetch_assoc()) {
+									echo "<div class='row align-items-end'>";
+										echo "<div class='col-md-6'>";
+											echo "<div class='form-group'>";
+												echo "<label for='firstname'>ชื่อ: ".$row['member_fname']."</label>";
+												// echo "<input type='text' name='fn_".$row['member_fname']."' value='" . $row["member_fname"] ."' min='0' />";
+											echo "</div>";
+										echo "</div>";
+										echo "<div class='col-md-6'>";
+											echo "<div class='form-group'>";
+												echo "<label for='lastname'>นามสกุล: ".$row['member_lname']."</label>";
+												// echo "<input type='text' name='fn_".$row['member_lname']."' value='" . $row["member_lname"] ."' min='0' />";
+											echo "</div>";
+										echo "</div>";
+									echo "</div>";
+									echo "<div class='row align-items-end'>";
+										echo "<div class='col-md-12'>";
+											echo "<div class='form-group'>";
+												echo "<label for='streetaddress'>ที่อยู่: ".$row['address']."</label>";
+												// echo "<input type='text' name='fn_".$row['address']."' value='" . $row['address'] ."' min='0' />";
+											echo "</div>";
+										echo "</div>";
+									echo "</div>";
+									echo "<div class='row align-items-end'>";
+										echo "<div class='col-md-12'>";
+											echo "<div class='form-group'>";
+												echo "<label for='phone'>หมายเลขโทรศัพท์: ".$row['phone']."</label>";
+												// echo "<input type='text' name='fn_".$row['phone']."' value='" . $row['phone'] ."' min='0' />";
+											echo "</div>";
+										echo "</div>";
+									echo "</div>";
+								}
+							}
+							// $conn->close();
+						?>
 					<div class="form-group">
-										<div class="col-mt-4">
-											<div class="radio">
-												<label><input type="radio" name="optradio"></label>
-												<tr>
-													<td align="right" valign="middle">แนบสลิปโอนเงิน :</td>
-													<td colspan="2"><label for="p_img1"></label>
-													<input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
-        										</tr>
-											</div>
-										</div>
-									</div>
-										<a href="display.php" class="btn btn-info" role="button">เสร็จสิ้น</a>
-										<button type="button" class="btn btn-danger">ยกเลิก</button>
-
-	          </form><!-- END -->
+						<div class="col-mt-4">
+							<div class="radio">
+								<label><input type="radio" name="optradio"></label>
+									<tr>
+										<td align="right" valign="middle">แนบสลิปโอนเงิน :</td>
+										<td colspan="2"><label for="p_img1"></label>
+										<input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
+									</tr>
+								</div>
+							</div>
+						</div>
+						<?php 
+							$totalPrice = 0; 
+							echo "<a href='action/add_payment.php?total=".$totalPrice."&memberId=".$_SESSION["username"]."' class='btn btn-info' role='button'>เสร็จสิ้น</a>"; 
+						?>
+						<a href="order.php" class="btn btn-danger" role="button">ยกเลิก</a>
 					</div>
 					<div class="col-xl-5">
-	          <div class="row mt-5 pt-3">
-	          	<div class="col-md-12 d-flex mb-5">
-	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">รายการสินค้าทั้งหมด</h3>
-	          			<p class="d-flex">
-		    						<span>ยอดรวมสินค้า:</span>
-		    						<span>฿220</span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>รวมการจัดส่ง:</span>
-		    						<span>฿0</span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>การชำระเงินทั้งหมด:</span>
-		    						<span>฿220</span>
-		    					</p>
-		    					<hr>
-		    					<p class="d-flex total-price">
-		    						<span>ทั้งหมด</span>
-		    						<span>฿220</span>
-		    					</p>
-								
+	          			<div class="row mt-5 pt-3">
+	          				<div class="col-md-12 d-flex mb-5">
+	          					<div class="cart-detail cart-total p-3 p-md-4">
+	          						<h3 class="billing-heading mb-4">รายการสินค้าทั้งหมด</h3>
+										<?php
+											$sql = "SELECT o.totalprice FROM `order` o JOIN member m ON m.member_id = o.member_id WHERE m.member_name = '".$_SESSION["username"]."' AND pay_id = 0 ";	
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+												while($row = $result->fetch_assoc()) {
+													$totalPrice += $row['totalprice'];
+												}
+											}
+
+											echo "<p class='d-flex'>";
+												echo "<span>ยอดรวมสินค้า:</span>";
+												echo "<span>฿".$totalPrice."</span>";
+											echo "</p>";
+											echo "<p class='d-flex'>";
+												echo "<span>รวมการจัดส่ง:</span>";
+												echo "<span>฿0</span>";
+											echo "</p>";
+											echo "<p class='d-flex'>";
+												echo "<span>การชำระเงินทั้งหมด:</span>";
+												echo "<span>฿".$totalPrice."</span>";
+											echo "</p><hr>";
+											echo "<p class='d-flex total-price'>";
+												echo "<span>ทั้งหมด:</span>";
+												echo "<span>฿".$totalPrice."</span>";
+											echo "</p>";
+
+											$conn->close();
+										?>
+									</div>
+	          					</div>
+        					</div>
+      					</div>
 					</div>
-	          	</div>
-	          	<!--div class="col-md-12">
-	          		<div class="cart-detail p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Payment Method</h3>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-											</div>
-										</div>
-									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
-								</div>
-	          	</div>
-	          </div>
-          </div> <!-- .col-md-8 -->
-        </div>
-      </div>
+					</form>
+				</div>
+			</div>
+		</div>
     </section> <!-- .section -->
 	
 

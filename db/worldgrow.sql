@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2020 at 10:28 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Nov 14, 2020 at 08:42 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,7 +43,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_id`, `member_name`, `member_password`, `member_fname`, `member_lname`, `address`, `phone`, `member_role`) VALUES
-(2, 'admin', 'admin', 'name', 'lastname', '', NULL, 'A');
+(2, 'admin', 'admin', 'name', 'lastname', '', NULL, 'A'),
+(3, 'test', '123456', 'test', 'tests', '123456', 123456, 'U');
 
 -- --------------------------------------------------------
 
@@ -82,12 +82,19 @@ CREATE TABLE `payment` (
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `product_type` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `product_detail` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(15) NOT NULL,
   `quantity` int(15) NOT NULL,
-  `producttype_id` int(11) NOT NULL
+  `producttype_id` int(11) NOT NULL,
+  `pic` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_name`, `product_detail`, `price`, `quantity`, `producttype_id`, `pic`) VALUES
+(2, 'tester', 'ddddd', 200, 5, 1, 'wp3703420-iron-man-4k-wallpapers.jpg');
 
 -- --------------------------------------------------------
 
@@ -128,8 +135,7 @@ ALTER TABLE `payment`
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `fk_producttype_producttype_id` (`producttype_id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `producttype`
@@ -145,7 +151,7 @@ ALTER TABLE `producttype`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -163,35 +169,13 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `producttype`
 --
 ALTER TABLE `producttype`
   MODIFY `producttype_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `order`
---
-ALTER TABLE `order`
-  ADD CONSTRAINT `fk_payment_pay_id` FOREIGN KEY (`pay_id`) REFERENCES `payment` (`pay_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Constraints for table `payment`
---
-ALTER TABLE `payment`
-  ADD CONSTRAINT `fk_Member_member_id` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `fk_producttype_producttype_id` FOREIGN KEY (`producttype_id`) REFERENCES `producttype` (`producttype_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

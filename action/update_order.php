@@ -6,9 +6,14 @@
     //$totalprice = $_REQUEST['totalprice'];
     //$product = $_REQUEST['product'];
     $quantity = $_REQUEST['quantity'];
-        $sql = "UPDATE `order` 
-                SET quantity = '$quantity'
-            WHERE order_id = '$id'";
+    $price = $_REQUEST['price'];
+
+    $totalp = $quantity * $price;
+
+    $sql = "UPDATE `order` 
+            SET quantity = '$quantity' ,
+            totalprice = '$totalp'
+            WHERE order_id = '$id' ";
               
     if ($conn->query($sql) === TRUE) {
         header("Location: ../order.php");
@@ -17,15 +22,15 @@
     }
 
     $conn->close();
-    if($result){
-        echo "<script>";
-        echo "window.location ='order.php'; ";
-        echo "</script>";
-    } else {
+    // if($result){
+    //     echo "<script>";
+    //     echo "window.location ='order.php'; ";
+    //     echo "</script>";
+    // } else {
         
-        echo "<script>";
-        echo "alert('ERROR!');";
-        echo "window.location ='order.php'; ";
-        echo "</script>";
-    }
+    //     echo "<script>";
+    //     echo "alert('ERROR!');";
+    //     echo "window.location ='order.php'; ";
+    //     echo "</script>";
+    // }
 ?>

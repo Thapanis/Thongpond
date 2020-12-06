@@ -108,52 +108,54 @@
 				</tr>
 				</thead>
 				<tbody>
-        <tr>
+        <?php
+                  	$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity, pic FROM product ";
+				  	$result = $conn->query($sql);
+				  
+				  	if ($result->num_rows > 0) {
+                    	while($row = $result->fetch_assoc()) {
+                      echo "<tr> ";
+                        echo "<td><img height='100' width='100' src='images/".$row['pic']."' alt='' /></td>";
+                        echo "<td>".$row['product_id']."</td>";
+                        echo "<td>".$row['product_name']."</td>";
+                        echo "<td>".$row['product_detail']."</td>";
+                        echo "<td>".$row['price']."</td>";
+                        echo "<td>".$row['producttype_id']."</td>";
+                        echo "<td>".$row['quantity']."</td>";
+                        echo "<td> <a href='#?id=" . $row["product_id"] . "' class='btn btn-danger'>แก้ไข</a></td>";
+                        echo "<td> <a href='action/del_product.php?id=" . $row["product_id"] . "' class='btn btn-danger'>ลบ</a></td>";
+                      echo "</tr> ";
+						} 
+          }
+          
+				?>
+
+
+        <!-- <tr>
                 <?php
-                  $sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
+                  $sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity , pic FROM product ";
                   $result = $conn->query($sql);
 
-                  if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) { 
-                      echo "<tr> ";
-                        echo "<td>". "" ."</td>";
-                        echo "<td>". $row["product_id"] ."</td>";
-                        echo "<td>". $row["product_name"] ."</td>";
-                        echo "<td>". $row["product_detail"] ."</td>";
-                        echo "<td>". $row["price"] ."</td>";
-                        echo "<td>". $row["producttype_id"] ."</td>";
-                        echo "<td>". $row["quantity"] ."</td>";
-                        echo "<td><button type='button' class='btn btn-primary'>แก้ไข</button></td>";
-                        echo "<td><button type='button' class='btn btn-danger'>ลบ</button></td>";
-                      echo "</tr> ";
-                    }
-                  }
-
-                  $conn->close();
-                  ?>
-        </tr>
-				<tr>
-          <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
-					<td>01</td>
-					<td>ผงดอกอัญชันอบแห้ง 100%</td>
-					<td>น้ำหนัก 40 กรัม/ถุง</td>
-          <td>100</td>
-          <td>ของแห้ง</td>
-          <td>5</td>
-          <td><button type="button" class="btn btn-primary">แก้ไข</button></td>
-          <td><button type="button" class="btn btn-danger">ลบ</button></td>
-				</tr>
-				<tr>
-          <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
-					<td>02</td>
-					<td>ผงพริกไทยดำ 100%</td>
-					<td>น้ำหนัก 40 กรัม/ถุง</td>
-          <td>100</td>
-          <td>ของแห้ง</td>
-          <td>10</td>
-          <td><button type="button" class="btn btn-primary">แก้ไข</button></td>
-          <td><button type="button" class="btn btn-danger">ลบ</button></td>
-				</tr>
+                    while($row = $result->fetch_assoc()) { ?>
+                      <tr>
+                      <td><img height="100" width="100" src="images/<?php echo $row['pic']; ?>" alt=""></td>
+                      <td><?php echo $row['product_id'];?></td>
+                      <td><?php echo $row['product_name'];?></td>
+                      <td><?php echo $row['product_detail'];?></td>
+                      <td><?php echo $row['price'];?></td>
+                      <td><?php echo $row['producttype_id'];?></td>
+                      <td><?php echo $row['quantity'];?></td>
+                      <td>
+                      <a class="btn btn-danger" name="updatestatus" href="action/del_product?id=<?php echo $row['product_id']; ?>" role="button">
+                          <i class="material-icons">แก้ไข</i></a>
+                      </td>
+                      <td>
+                          <a class="btn btn-danger" href="action/del_product?id=<?php echo $row['product_id']; ?>" role="button">
+                          <i class="material-icons">ลบ</i></a>
+                      </td>
+                    </tr>
+                    <?php } ?>
+        </tr> -->
 				</tbody>
 				</table>
 
@@ -181,4 +183,3 @@
   <script src="js/main.js"></script>
   </body>
 </html>
-<!--?php  include('f.php');?-->

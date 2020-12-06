@@ -135,7 +135,7 @@
                         echo "<td>". $row["member_lname"] ."</td>";
                         echo "<td>". $row["address"] ."</td>";
                         echo "<td>". $row["phone"] ."</td>";
-                        echo "<td><button type='button' class='btn btn-danger'>ลบ</button></td>";
+                        echo "<td> <a href='action/del_user.php?id=" . $row["member_id"] . "' class='btn btn-danger'>ลบ</a></td>";
                       echo "</tr> ";
                     }
                   }

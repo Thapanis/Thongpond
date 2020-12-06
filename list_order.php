@@ -96,7 +96,7 @@
         <table class="table">
           <thead>
               <tr>
-                <th>สมชิก</th>
+                <th>สมาชิก</th>
                 <th>เลขที่สั่งซื้อ</th>
                 <th>ราคารวม</th>
                 <th>สถานะ</th>
@@ -105,14 +105,26 @@
               </tr>
           </thead>
             <tbody>
-                <tr>
-                  <td>admin</td>
-                  <td>53</td>
-                  <td>120</td>
-                  <td>รอชำระเงิน</td>
-                  <td></td>
-                  <td>01/02/2020</td>
-                </tr>
+                <?php
+									$sql = "SELECT o.order_id, o.quantity, o.totalprice, m.member_name  FROM `order` o JOIN member m ON m.member_id = o.member_id ";
+									$totalPriceForPayment = 0;
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<tr> ";
+                      echo "<td>". $row["member_name"] ."</td>";
+                      echo "<td>". $row["order_id"] ."</td>";
+                      echo "<td>". $row["totalprice"] ."</td>";
+                      echo "<td> ";
+                      echo "<td> ";
+                      echo "<td> ";
+											echo "</tr> ";
+										}
+									}
+
+									$conn->close();
+								?>
               </tbody>
 				</table>
 

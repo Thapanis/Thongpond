@@ -110,7 +110,32 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+    <?php
+
+                  $payId = $_REQUEST['payId'];
+
+									$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.pic, p.price FROM `order` o 
+									JOIN product p ON p.product_id = o.product_id 
+									JOIN member m ON m.member_id = o.member_id
+									WHERE m.member_name = '".$_SESSION["username"]."' AND o.pay_id = ".$payId." ";
+									
+									$totalPriceForPayment = 0;
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<tr> ";
+											echo "<td id ='orderId'>". $row["order_id"] ."</td>";
+											echo "<td><img height='100' width='100' src='images/".$row['pic']."' alt='' /></td>";
+											echo "<td>". $row["quantity"] ."</td>";
+                      echo "</tr> ";
+                      $totalPriceForPayment += $row["totalprice"];
+                    }
+									}
+
+									// $conn->close();
+			?>
+      <!-- <tr>
         <th>1</th>
         <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
         <td>5</td>
@@ -124,12 +149,24 @@
         <th></th>
         <td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
         <td>2</td>
-      </tr>
+      </tr> -->
     </tbody>
-      <tr>
-        <th>449/15 ม.333 จ.สุโขทัย</th>
+    <tr>
+                  <?php 
+                  $sql = "SELECT address FROM member WHERE member_name = '".$_SESSION["username"]."' ";	
+                  $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                          while($row = $result->fetch_assoc()) { 
+                            echo "<tr> ";
+                              echo "<td>ที่อยู่จัดส่ง:  ". $row["address"] ."</td>";
+                            echo "</tr> ";
+                          }
+                        }
+
+                  $conn->close();
+                  ?>
       </tr>
-      <tr>
         <td>
           <?php
 								if(!isset($_SESSION["username"])){

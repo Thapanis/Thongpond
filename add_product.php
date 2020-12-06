@@ -1,5 +1,6 @@
 <?php
-	include 'connectdb.php';
+        include 'connectdb.php';
+        include("action/add_product_db.php"); 
 	session_start();
 ?>
 
@@ -98,7 +99,7 @@
        </div>
        </div>
 
-       <form action="action/add_product_db.php"  method="post" enctype="multipart/form-data" name="add_product" id="add_product">
+       <form action=""  method="post" enctype="multipart/form-data" name="add_product" id="add_product">
             
        <table width="600" border="1" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -161,14 +162,27 @@
                 <td align="right" valign="middle">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
         </tr>
-        <tr>
+        <tr>    
                 <td align="right" valign="middle">รูปภาพสินค้า:</td>
                 <td colspan="2"><label for="product_img"></label>
-                <input name="product_img" type="file" required class="bg-warning" id="product_img" size="40" /></td>
+                <div class="user-image mb-3 text-center">
+        <div style="width: 100px; height: 100px; overflow: hidden; background: #cccccc; margin: 0 auto">
+          <img src="..." class="figure-img img-fluid rounded" id="imgPlaceholder" alt="">
+        </div>
+      </div>
+
+      <div class="custom-file">
+        <input type="file" name="fileUpload" class="custom-file-input" id="chooseFile" required>
+        <label class="custom-file-label" for="chooseFile">Select file</label>
+      </div>
+               
+               
+               
+               </td>
         </tr>
         <tr>
                 <td>&nbsp;</td>
-                <td colspan="2"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มสินค้า</button></td>
+                <td colspan="2"><button type="submit" name="submit" id="button" value="ตกลง" class="btn btn-primary">เพิ่มสินค้า</button></td>
         </tr>
 
             </table>
@@ -177,7 +191,25 @@
     
     </div>
  </div>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#imgPlaceholder').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+  }
+
+  $("#chooseFile").change(function () {
+    readURL(this);
+  });
+</script>
  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

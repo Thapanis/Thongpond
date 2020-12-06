@@ -107,26 +107,32 @@
               </tr>
           </thead>
             <tbody>
-                <tr>
-                  <td>33</td>
-                  <td>54</td>
-                  <td>SADBOT</td>
-                  <td>1</td>
-                  <td>120</td>
-                  <td>รอชำระเงิน</td>
-                  <td></td>
-                  <td>01/02/2020</td>
-                </tr>
-                <tr>
-                  <td>33</td>
-                  <td>55</td>
-                  <td>SADBOT</td>
-                  <td>2</td>
-                  <td>100</td>
-                  <td>ชำระเงินแล้ว</td>
-                  <td></td>
-                  <td>20/02/2020</td>
-                </tr>
+            <?php
+									$sql = "SELECT o.order_id, o.quantity, o.totalprice, m.member_name, p.pay_id, p.pay_date
+                  FROM `order` o 
+                  JOIN member m ON m.member_id = o.member_id
+                  LEFT JOIN payment p ON p.pay_id = o.pay_id ";
+									
+									$totalPriceForPayment = 0;
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<tr> ";
+                      echo "<td>". $row["pay_id"] ."</td>";
+                      echo "<td>". $row["order_id"] ."</td>";
+                      echo "<td>". $row["member_name"] ."</td>";
+                      echo "<td>". $row["quantity"] ."</td>";
+                      echo "<td>". $row["totalprice"] ."</td>";
+                      echo "<td> ";
+                      echo "<td> ";
+                      echo "<td>". $row["pay_date"] ."</td>";
+											echo "</tr> ";
+										}
+									}
+
+									$conn->close();
+								?>
               </tbody>
 				</table>
 

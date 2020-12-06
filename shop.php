@@ -89,7 +89,7 @@
 				?>
 	          <?php
 					$sql = "SELECT o.order_id, o.quantity, o.totalprice, p.product_name, p.price FROM `order` o
-					JOIN product p ON p.product_id = o.product_id ";
+					JOIN product p ON p.product_id = o.product_id WHERE o.pay_id = 0 ";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						echo "<li class='nav-item cta cta-colored'><a href='order.php' class='nav-link'><span class='icon-shopping_cart'></span>[". $result->num_rows ."]</a></li>";
@@ -107,10 +107,7 @@
     <div class="hero-wrap hero-bread" style="background-image: url('images/shop-1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -145,66 +142,20 @@
 						<tbody>
 						<tbody>
 						<?php
-							$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity FROM product ";
+							$sql = "SELECT product_id, product_name, product_detail, price, producttype_id, quantity, pic FROM product ";
 							$result = $conn->query($sql);
-
+						
 							if ($result->num_rows > 0) {
-								while($row = $result->fetch_assoc()) { 
-							echo "<tr> ";
-								echo "<td>". $row["quantity"] ."</td>";
-								echo "<td>". "" ."</td>";
-								echo "<th>". $row["product_detail"] ."</td>";
-								echo "<br>". $row["price"];
-								echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."&product=". $row["product_id"] ."' class='btn btn-success'>สั่งซื้อ</td>";
-							echo "</tr> ";
-							}
-						}
-
-							$conn->close();
+								while($row = $result->fetch_assoc()) {
+									echo "<tr> ";
+										echo "<td>".$row['quantity']."</td>";
+										echo "<td><img height='100' width='100' src='images/".$row['pic']."' alt='' /></td>";
+										echo "<th>".$row['product_detail']."<br/>฿".$row['price']."</th>";
+										echo "<td><a href='action/add_order.php?id=". $row["product_id"] ."&user=". $_SESSION["userId"] ."&totalprice=". $row["price"] ."&product=". $row["product_id"] ."' class='btn btn-success'>สั่งซื้อ</td>";
+									echo "</tr> ";
+								} 
+							} 
 						?>
-							<!-- <tr>
-								<td>2</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0001.jpg);"></div></td>
-								<td>ผงดอกอัญชันอบแห้ง 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0002.jpg);"></div></td>
-								<td>ผงพริกไทยดำ 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0003.jpg);"></div></td>
-								<td>ผงขมิ้นเหลือง 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0004.jpg);"></div></td>
-								<td>ผงบะระเพ็ด 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0005.jpg);"></div></td>
-								<td>ผงไพล 100% น้ำหนัก 40 กรัม/ถุง<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0006.jpg);"></div></td>
-								<td>ผงขิง 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td class="image-prod"><div class="img" style="background-image:url(images/สมุนไพรผง_200525_0007.jpg);"></div></td>
-								<td>ผงฟ้าทะลายโจร 100%<br/>฿100</td>
-								<td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
-							</tr> -->
-
 						</tbody>
 						</table>
 					</div>
